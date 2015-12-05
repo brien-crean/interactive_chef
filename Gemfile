@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.1'
 
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -15,6 +16,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'simple_form'
 gem 'faker'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'byebug'
