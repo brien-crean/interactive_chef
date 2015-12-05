@@ -1,0 +1,7 @@
+<h1>Recipe Show</h1>
+<p>Title: <%= @recipe.title %></p>
+<p>Description: <%= @recipe.description %></p>
+<p>Cook Time: <%= @recipe.cook_time %></p>
+<p>Prep Time:<%= @recipe.prep_time %></p>
+<%= link_to "Edit", edit_recipe_path(@recipe) %>
+<%= link_to "Delete", recipe_path(@recipe), method: :delete %>
