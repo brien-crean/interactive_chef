@@ -4,6 +4,11 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.order("created_at")
+
+    respond_to do |format|
+      format.html { render }
+      format.json { render json: @recipes.select(:id, :title, :description).to_json }
+    end
   end
 
   def new
@@ -21,6 +26,11 @@ class RecipesController < ApplicationController
   end
 
   def show
+
+    respond_to do |format|
+      format.html { render }
+      format.json { render json: @recipe.select(:id, :title, :description).to_json }
+    end
 
   end
 
