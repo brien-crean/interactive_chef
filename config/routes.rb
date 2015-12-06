@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'recipes#index'
-  resources :recipes
+  resources :recipes do
+    resources :comments, only: [:new, :create]
+  end
+
   resources :users, only: [:new, :create]
 
   resources :sessions, only: [:new, :create] do
