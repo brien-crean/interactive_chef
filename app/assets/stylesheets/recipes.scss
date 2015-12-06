@@ -1,3 +1,5 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
