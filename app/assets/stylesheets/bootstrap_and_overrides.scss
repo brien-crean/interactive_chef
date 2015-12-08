@@ -1,0 +1,6 @@
+$brand-primary: #2F0F44;
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$default-float: right;

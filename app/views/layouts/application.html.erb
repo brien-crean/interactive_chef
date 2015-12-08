@@ -8,22 +8,25 @@
 </head>
 <body>
 
-  <nav>
-    <%= link_to "Recipes", recipes_path %>
-    |
-    <%= link_to "Add Recipe", new_recipe_path %>
-    |
-    <% if user_signed_in? %>
-      Hello <%= current_user.first_name %>!
-    |
-      <%= link_to "Log Out", sessions_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign In", new_session_path %>
-      <%= link_to "Sign Up", new_user_path %>
-    <% end %>
-  </nav>
+  <div class="container">
 
-<%= yield %>
+    <nav>
+      <%= link_to "Recipes", recipes_path %>
+      |
+      <%= link_to "Add Recipe", new_recipe_path %>
+      |
+      <% if user_signed_in? %>
+        Hello <%= current_user.first_name %>!
+      |
+        <%= link_to "Log Out", sessions_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign In", new_session_path %>
+        <%= link_to "Sign Up", new_user_path %>
+      <% end %>
+    </nav>
 
+    <%= yield %>
+
+  </div>
 </body>
 </html>
