@@ -19,6 +19,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'simple_form'
+gem 'simple_form_fancy_uploads'
 gem 'faker'
 gem 'rails_12factor'
 
