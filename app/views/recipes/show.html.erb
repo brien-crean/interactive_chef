@@ -1,6 +1,9 @@
 <h1>Recipe Show</h1>
-<img class="grow" src="<%=image_url('lasagne.jpg')%>" height="300px" width="300px" />
+<!-- <img class="grow" src="<%=image_url('lasagne.jpg')%>" height="300px" width="300px" /> -->
 <p>Title: <%= @recipe.title %></p>
+<% if @recipe.image.present? %>
+  <%= image_tag @recipe.image.url(:medium) %>
+<% end %>
 <p id="description">Description: <%= @recipe.description %></p>
 <p>Cook Time: <%= @recipe.cook_time %></p>
 <p>Prep Time:<%= @recipe.prep_time %></p>

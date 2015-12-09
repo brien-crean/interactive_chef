@@ -17,6 +17,7 @@ gem 'rack-cors', :require => 'rack/cors'
 
 gem 'font-awesome-rails'
 gem 'carrierwave'
+gem 'mini_magick'
 gem 'simple_form'
 gem 'faker'
 gem 'rails_12factor'
