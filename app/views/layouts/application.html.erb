@@ -8,16 +8,16 @@
 </head>
 <body>
 
-  <div class="container">
 
-    <nav>
+    <nav class="nav">
       <%= link_to "Recipes", recipes_path %>
       |
       <%= link_to "Add Recipe", new_recipe_path %>
       <div class="pull-right">
 
         <% if user_signed_in? %>
-          Hello <%= current_user.first_name %>!
+        Hello <%= current_user.first_name %>!
+
         |
           <%= link_to "Log Out", sessions_path, method: :delete %>
         <% else %>
@@ -27,6 +27,7 @@
         <% end %>
       </div>
     </nav>
+<div class="container">
 
     <%= yield %>
 

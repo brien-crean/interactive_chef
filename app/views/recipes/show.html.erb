@@ -1,11 +1,20 @@
-<h1>Recipe Show</h1>
 <!-- <img class="grow" src="<%=image_url('lasagne.jpg')%>" height="300px" width="300px" /> -->
-<p>Title: <%= @recipe.title %></p>
+<h1><%= @recipe.title %></h1>
 <% if @recipe.image.present? %>
-  <%= image_tag @recipe.image.url(:medium) %>
+  <%= image_tag @recipe.image.url(:medium), class: "grow" %>
 <% end %>
 <p id="description">Description: <%= @recipe.description %></p>
 <p>Cook Time: <%= @recipe.cook_time %></p>
 <p>Prep Time:<%= @recipe.prep_time %></p>
-<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn btn-primary" %>
-<%= link_to "Delete", recipe_path(@recipe), class: "btn btn-danger", method: :delete %>
+<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
+<%= link_to "Delete", recipe_path(@recipe), class: "btn red-button", method: :delete %>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</p>

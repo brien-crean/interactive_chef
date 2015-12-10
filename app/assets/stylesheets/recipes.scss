@@ -1,6 +1,42 @@
-// Place all the styles related to the recipes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background-color: #F8F9F2;
+}
+.nav{
+  // background-color: #0099cc;
+  background-color: #70C1B3;
+  color: white;
+  height: 100px;
+  padding-top: 30px;
+  padding-left: 120px;
+  padding-right: 120px;
+  font-size: 30px;
+}
+
+.red-button{
+  background-color: #F8F9F2;
+  color: #FF1654;
+  padding: 8px 37px;
+  border: 2px solid #FF1654;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.blue-button{
+  background-color: #F8F9F2;
+  color: #247BA0;
+  padding: 8px 37px;
+  border: 2px solid #247BA0;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
 .grow {
   transition: all .2s ease-in-out;
 }
@@ -14,4 +50,34 @@
   height: 400px;
   padding: 10px;
   background: asset-url(camera_icon);
+}
+
+// .file {
+//     position: relative;
+//     overflow: hidden;
+//     margin: 10px;
+//     background: asset-url(camera_icon);
+// }
+// input#recipe_image {
+//     position: absolute;
+//     width: 400px;
+//     height: 400px;
+//     background: asset-url(camera_icon);
+//     top: 0;
+//     right: 0;
+//     margin: 0;
+//     padding: 0;
+//     font-size: 20px;
+//     cursor: pointer;
+//     opacity: 0;
+//     filter: alpha(opacity=0);
+// }
+
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+h1 {
+  font-family: 'Open Sans', sans-serif;
 }
