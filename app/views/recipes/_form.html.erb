@@ -14,6 +14,13 @@
   <div id="oldcamera-icon">
     <%#= f.input :comment, :input_html => { :wrap => :soft, :rows => 2}, :label => 'Type in box below:', :label_html => { :class => 'type' } %>
   </div>
+<b>Steps:</b>
+  <%= f.simple_fields_for :steps do |r| %>
+    <%= render "step_fields", f: r %>
+  <% end  %>
+
+
+
 <div class="form-group col-md-12">
   <%= f.submit %>
 </div>

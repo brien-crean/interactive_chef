@@ -13,10 +13,12 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    3.times {@recipe.steps.build}
   end
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
     if @recipe.save
       redirect_to @recipe
@@ -55,7 +57,9 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-      params.require(:recipe).permit([:title, :description, :cook_time, :prep_time, :image])
+      params.require(:recipe).permit(:title, :description, :cook_time, :prep_time, :image,
+                                      steps_attributes: [:id, :body],
+                                      includings_attributes: [:id, :amount, :measure_type])
   end
 
   def find_recipe

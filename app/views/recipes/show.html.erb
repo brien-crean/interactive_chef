@@ -8,6 +8,17 @@
 <p>Prep Time:<%= @recipe.prep_time %></p>
 <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
 <%= link_to "Delete", recipe_path(@recipe), class: "btn red-button", method: :delete %>
+<div class="orange pull-right">+</div>
+<div class="green pull-right">-</div>
+<div class="steps">
+  Directions
+  <ol>
+    <% @recipe.steps.each do |step|  %>
+        <li><%= step.body %></li>
+    <% end %>
+  </ol>
+</div>
+
 
 <p>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

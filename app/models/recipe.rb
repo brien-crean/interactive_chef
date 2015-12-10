@@ -10,4 +10,7 @@ class Recipe < ActiveRecord::Base
   has_many :tags, through: :taggings
 
   mount_uploader :image, ImageUploader
+
+  accepts_nested_attributes_for :includings, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :steps, reject_if: :all_blank, allow_destroy: true
 end
