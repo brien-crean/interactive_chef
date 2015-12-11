@@ -1,16 +1,15 @@
 
 <div class="container">
+<div class="">
 
   <h1>Welcome!</h1>
   <% @recipes.each do |recipe| %>
     <%= link_to recipe_path(recipe) do %>
       <%= image_tag recipe.image.url(:medium), class: "grow" %>
     <% end %>
-
-    <hr>
   <% end  %>
 
+</div>
 
   <input id="button" type="button" name="name" value="Text to Speech Test">
-
 </div>
