@@ -13,10 +13,19 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    3.times {@recipe.steps.build}
+    1.times {@recipe.steps.build}
+    1.times {@recipe.includings.build}
   end
 
   def create
+    # consider using selectize.js
+    # untested code:
+    # recipe_params["includings_attributes"].each_value do |v|
+    #   if v["ingredient"].to_i.to_s != v["ingredient"].to_s
+    #     ing = Ingredient.create(name: v["ingredient"])
+    #     v["ingredient"] = ing.id
+    #   end
+    # end
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
 
@@ -59,8 +68,12 @@ class RecipesController < ApplicationController
   def recipe_params
       params.require(:recipe).permit(:title, :description, :cook_time, :prep_time, :image,
                                       steps_attributes: [:id, :body],
-                                      includings_attributes: [:id, :amount, :measure_type])
+                                      includings_attributes: [:id, :amount, :measure_type, ingredients: [:name]])
   end
+
+  #
+  # "recipe"=>{"title"=>"adasfsdfsjkfnk", "description"=>"asfnsd,mfnsd,mfdn", "cook_time"=>"10", "prep_time"=>"210", "steps_attributes"=>{"0"=>{"body"=>"adasdhskjdhkj"}}, "includings_attributes"=>{"0"=>{"amount"=>"10", "measure_type"=>"gssdf", "ingredients"=>{"name"=>"sfsdffsd"}}}}, "commit"=>"Create Recipe"}
+
 
   def find_recipe
     @recipe = Recipe.find params[:id]

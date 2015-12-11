@@ -22,7 +22,7 @@ else{
 // called by each word/phrase recognised by Annyang commands
 function speak(input){
   var msg = new SpeechSynthesisUtterance(input);
-  msg.lang = 'en-IE';
+  msg.lang = 'en-US';
   window.speechSynthesis.speak(msg);
   console.log("Text Recognised was: " + input);
 }

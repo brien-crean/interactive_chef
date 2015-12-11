@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "Logged in!"
     else
       flash[:alert] = "Wrong credentials!"
+      render :new
     end
 
   end
