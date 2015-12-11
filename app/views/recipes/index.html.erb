@@ -1,7 +1,16 @@
-<h1>Recipes Index</h1>
-<% @recipes.each do |recipe| %>
-  <%= link_to recipe.title, recipe_path(recipe) %>
-  <hr>
-<% end  %>
 
-<input id="button" type="button" name="name" value="Text to Speech Test">
+<div class="container">
+
+  <h1>Welcome!</h1>
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe) do %>
+      <%= image_tag recipe.image.url(:medium), class: "grow" %>
+    <% end %>
+
+    <hr>
+  <% end  %>
+
+
+  <input id="button" type="button" name="name" value="Text to Speech Test">
+
+</div>
