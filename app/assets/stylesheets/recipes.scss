@@ -6,11 +6,19 @@ body{
   // background-color: #70C1B3;
   background-color: #0099cc;
   color: white;
-  height: 100px;
-  padding-top: 30px;
-  padding-left: 120px;
+  height: 120px;
+  padding-top: 5px;
+  padding-left: 20px;
   padding-right: 120px;
   font-size: 30px;
+}
+
+.picture-description{
+  background-color: #F6F6F6;
+  border-bottom: 1px solid #D4D5D6;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 .orange{
@@ -61,6 +69,7 @@ nav a{
 
 .grow {
   transition: all .2s ease-in-out;
+  box-shadow: -9px 0px 8px 1px #aaaaaa;
 }
 
 .grow:hover {

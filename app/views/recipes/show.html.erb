@@ -1,20 +1,45 @@
 <!-- <img class="grow" src="<%=image_url('lasagne.jpg')%>" height="300px" width="300px" /> -->
-<h1><%= @recipe.title %></h1>
-<% if @recipe.image.present? %>
-  <%= image_tag @recipe.image.url(:medium), class: "grow" %>
-<% end %>
-<p id="description">Description: <%= @recipe.description %></p>
-<p>Cook Time: <%= @recipe.cook_time %></p>
-<p>Prep Time:<%= @recipe.prep_time %></p>
-<%= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
-<%= link_to "Delete", recipe_path(@recipe), class: "btn red-button", method: :delete %>
-<div class="orange pull-right">+</div>
-<div class="green pull-right">-</div>
-<div class="steps">
-  Directions
-  <ol>
-    <% @recipe.steps.each do |step|  %>
-        <li><%= step.body %></li>
+<div class="picture-description">
+  <div class="container">
+
+<div class="col-md-4">
+    <% if @recipe.image.present? %>
+      <%= image_tag @recipe.image.url(:medium), class: "grow" %>
     <% end %>
-  </ol>
+  </div>
+    <h1><%= @recipe.title %></h1>
+
+    <p id="description"><%= @recipe.description %></p>
+    <p>Cook Time: <%= @recipe.cook_time %></p>
+    <p>Prep Time:<%= @recipe.prep_time %></p>
+
+  </div>
+
+</div>
+
+<div class="container">
+<div class="col-md-12">
+  <div class="ingredients col-md-4">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe.includings.each do |including|  %>
+      <li><%= "#{including.amount} #{including.measure_type} #{including.ingredient.name}" %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="steps col-md-8">
+<h3>Directions</h3>
+    <ol>
+      <% @recipe.steps.each do |step|  %>
+          <li><%= step.body %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>
+
+
+    <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
+    <%= link_to "Delete", recipe_path(@recipe), class: "btn red-button", method: :delete %>
+
 </div>
