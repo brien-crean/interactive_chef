@@ -5,10 +5,6 @@ body{
 @font-face {
   font-family: 'NotoSansGurmukhi';
   src:url('NotoSansGurmukhi.ttf');
-  // src:url('icomoon.eot?#iefix') format('embedded-opentype'),
-  //   url('icomoon.svg#icomoon') format('svg'),
-  //   url('icomoon.woff') format('woff'),
-  //   url('icomoon.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -20,8 +16,6 @@ body{
 }
 
 .nav {
-  // background-color: #0099cc;
-  // background-color: #70C1B3;
   background-color: #0099cc;
   color: white;
   height: 120px;
@@ -100,27 +94,6 @@ nav a{
   padding: 10px;
   background: asset-url(camera_icon_small1);
 }
-
-// .file {
-//     position: relative;
-//     overflow: hidden;
-//     margin: 10px;
-//     background: asset-url(camera_icon);
-// }
-// input#recipe_image {
-//     position: absolute;
-//     width: 400px;
-//     height: 400px;
-//     background: asset-url(camera_icon);
-//     top: 0;
-//     right: 0;
-//     margin: 0;
-//     padding: 0;
-//     font-size: 20px;
-//     cursor: pointer;
-//     opacity: 0;
-//     filter: alpha(opacity=0);
-// }
 
 .steps, li  {
   font-family: 'Open Sans', sans-serif;
