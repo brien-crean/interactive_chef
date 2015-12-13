@@ -14,24 +14,15 @@ $(document).on('ready', function(){
         Reveal.left();
       },
       'Slide Show': function() {
-        console.log("Hidden!");
-
-        window.location.href = '/presentations/3';
-        // $.ajax({
-        //   url: "/presentations",
-        //   method: 'GET',
-        //   error: function() {
-        //     console.log("ERROR!");
-        //   },
-        //   success: function(data) {
-        //     console.log("SUCCESS!");
-        //     console.log(data);
-        //   }
-        // });
+        console.log("Presentation started!");
+        var recipe = $("#recipe").data("id");
+        window.location.href = '/presentations/' + recipe;
       },
       'End': function() {
-        console.log("Ended!");
-        window.location.href = '/';
+        console.log("Ended Presentation!");
+        var recipe = $("#recipe").data("id");
+        console.log(recipe);
+        window.location.href = '/recipes/' + recipe;
       },
       'description': function() {
         var description = $('#description').html();

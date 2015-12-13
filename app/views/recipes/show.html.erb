@@ -2,7 +2,7 @@
   <div class="container">
 
 <div class="col-md-4">
-  <span data-id='<%= @recipe.id %>'></span>
+  <span id="recipe" data-id='<%= @recipe.id %>'></span>
     <% if @recipe.image.present? %>
       <%= image_tag @recipe.image.url(:medium), class: "grow" %>
     <% end %>

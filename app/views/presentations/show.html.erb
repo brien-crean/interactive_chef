@@ -1,6 +1,6 @@
 <div class="reveal">
   <div class="slides">
-    <span data-id='<%= @recipe.id %>'></span>
+    <span id="recipe" data-id='<%= @recipe.id %>'></span>
     <section>
       <% if @recipe.image.present? %>
         <%= image_tag @recipe.image.url(:medium), class: "grow" %>
