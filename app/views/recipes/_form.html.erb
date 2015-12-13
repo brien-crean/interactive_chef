@@ -1,44 +1,51 @@
-<div class="col-md-6 form-group">
+<div class="col-md-12 form-group">
+
   <%= simple_form_for @recipe do |f|%>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <div class="form-inline">
-      <%= f.input :cook_time %>
-      <%= f.input :prep_time %>
+    <div class="col-md-6">
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <div class="form-inline">
+        <%= f.input :cook_time %>
+        <%= f.input :prep_time %>
+      </div>
     </div>
-</div>
     <%= f.input :image %>
-<hr />
+  <hr />
 
-<div class="col-md-12">
-  <div class="col-md-6">
-    <b>Steps:</b>
-  </div>
-  <div class="col-md-6">
-    <b>Ingredients:</b>
-  </div>
-</div>
-
-
-<div class="col-md-6">
-    <%= f.simple_fields_for :steps do |r| %>
-      <%= render "step_fields", f: r %>
-    <% end  %>
-    <div class="links">
-      <%= link_to_add_association "Add Step", f, :steps %>
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <b>Steps:</b>
     </div>
-</div>
-
-<div class="form-group">
-  <%= f.simple_fields_for :includings do |r| %>
-      <%= render "including_fields", f: r %>
-    <% end  %>
-  <div class="links">
-    <%= link_to_add_association "Add Ingredient", f, :includings %>
+    <div class="col-md-6">
+      <b>Ingredients:</b>
+    </div>
   </div>
-</div>
 
-<div class="form-group col-md-12">
+
+
+    <div class="col-md-6 form-group">
+        <%= f.error :steps %>
+        <%= f.simple_fields_for :steps do |r| %>
+          <%= render "step_fields", f: r %>
+        <% end  %>
+        <div class="links">
+          <%= link_to_add_association fa_icon("plus-square", text: "Add Step"), f, :steps %>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 form-group">
+      <%= f.simple_fields_for :includings do |r| %>
+          <%= render "including_fields", f: r %>
+        <% end  %>
+      <div class="links">
+        <%= link_to_add_association fa_icon("plus-square", text: "Add Ingredient"), f, :includings %>
+      </div>
+    </div>
+
+
+    <div class="col-md-12 row">
   <%= f.submit %>
-</div>
+  </div>
   <% end %>
+</div>

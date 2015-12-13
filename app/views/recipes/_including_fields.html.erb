@@ -1,11 +1,12 @@
-
+<div class="nested-fields row">
   <div class="col-md-2">
-    <%= f.input :amount, class: "form-control" %>
+    <%= f.input :amount, as: :string %>
   </div>
   <div class="col-md-2">
-    <%= f.input :measure_type, class: "form-control" %>
+    <%= f.input :measure_type, label: "Measure" %>
   </div>
-    <div class="col-md-2">
-    <%= f.association :ingredient, class: "form-control" %>
+    <div class="col-md-4">
+    <%= f.association :ingredient %>
   </div>
-  <%= link_to_remove_association "Remove Ingredient", f %>
+  <%= link_to_remove_association fa_icon("minus-square", text: "Remove Ingredient"), f %>
+</div>

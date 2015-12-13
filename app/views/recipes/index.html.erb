@@ -4,24 +4,24 @@
 
   <h1>Welcome!</h1>
 <ul class="grid overlay">
-  <li>
     <% @recipes.each do |recipe| %>
-    <%= link_to recipe.title, recipe_path(recipe) %>
-      <figure>
-    <%= link_to recipe_path(recipe) do %>
-      <%= image_tag recipe.image %>
-      <figcaption>
-        <h4> <%= recipe.title %> </h4>
-        <!-- <span><%= recipe.description %></span> -->
-        <h4>Rating: ****</h4>
-      </figcaption>
-
-      <% end %>
-    </figure>
+    <li>
+      <% if recipe.image.present? %>
+        <figure>
+          <%= link_to recipe_path(recipe) do %>
+          <%= image_tag recipe.image %>
+          <figcaption>
+          <h4> <%= recipe.title %> </h4>
+          <!-- <span><%= recipe.description %></span> -->
+          <h4>Rating: ****</h4>
+          </figcaption>
+          <% end %>
+        </figure>
+      <% else %>
+        <%= link_to recipe.title, recipe_path(recipe) %>
+      <% end  %>
     <% end  %>
   </li>
 </ul>
-<!-- </div> -->
-
   <!-- <input id="button" type="button" name="name" value="Text to Speech Test"> -->
 </div>

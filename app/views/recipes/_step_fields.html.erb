@@ -1,4 +1,6 @@
-<div class="nested-fields">
-  <%= f.input :body, label: false %>
-  <%= link_to_remove_association "Remove Step", f %>
+<div class="nested-fields row">
+  <div class="col-md-10">
+  <%= f.input :body, as: :string, label: "Step" %>
+</div>
+  <%= link_to_remove_association fa_icon("minus-square", text: "Remove Step"), f %>
 </div>

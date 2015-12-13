@@ -7,7 +7,7 @@
 User.create!(first_name: "Brien", last_name: "Crean", email: "brien.crean@gmail.com", password: "password")
 User.create!(first_name: "John", last_name: "Smith", email: "john.smith@gmail.com", password: "password")
 User.create!(first_name: "Mary", last_name: "Rearden", email: "mary.rearden@gmail.com", password: "password")
-User.create!(first_name: "Joanne", last_name: "Hennessy", email: "joanne.hennessy@gmail.com", password: "password")
+User.create!(first_name: "Joe", last_name: "Hennessy", email: "user.@user.com", password: "password")
 
 # Ingredient seeds
 i1 = Ingredient.create!(name: "Whole Tomatoes");
@@ -86,6 +86,15 @@ cook_time: 35, prep_time: 10, user_id: 1)
 
 recipe4 = Recipe.create!(title: "Corn Soup", description: "The recipe is simple: 9 ingredients total, and has the perfect balance of sweet and savory flavors, is healthy, and makes an ideal light lunch or dinner when accompanied with bread, a sandwich or a salad. Not only is it both vegan and gluten free, but it can also be prepared one of two ways: Blended and smooth, or chunky and brothy.",
 cook_time: 20, prep_time: 10, user_id: 1)
+
+recipe1.image = Rails.root.join("app/assets/images/lasagne.jpg").open
+recipe1.save!
+recipe2.image = Rails.root.join("app/assets/images/hummus.jpg").open
+recipe2.save!
+recipe3.image = Rails.root.join("app/assets/images/italian_chicken_bake.jpg").open
+recipe3.save!
+recipe4.image = Rails.root.join("app/assets/images/corn-soup.jpg").open
+recipe4.save!
 
 Step.create!(body: "In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 tablespoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.", recipe_id: 1)
 

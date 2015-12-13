@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-
+  before_action :authenticate_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -13,8 +13,6 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
-    1.times {@recipe.steps.build}
-    1.times {@recipe.includings.build}
   end
 
   def create
@@ -66,14 +64,10 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-      params.require(:recipe).permit(:title, :description, :cook_time, :prep_time, :image,
-                                      steps_attributes: [:id, :body],
-                                      includings_attributes: [:id, :amount, :measure_type, :ingredient_id, :_destroy])
+    params.require(:recipe).permit(:title, :description, :cook_time, :prep_time, :image,
+                                   steps_attributes: [:id, :body, :_destroy],
+                                   includings_attributes: [:id, :amount, :measure_type, :ingredient_id, :_destroy])
   end
-
-  #
-  # "recipe"=>{"title"=>"adasfsdfsjkfnk", "description"=>"asfnsd,mfnsd,mfdn", "cook_time"=>"10", "prep_time"=>"210", "steps_attributes"=>{"0"=>{"body"=>"adasdhskjdhkj"}}, "includings_attributes"=>{"0"=>{"amount"=>"10", "measure_type"=>"gssdf", "ingredients"=>{"name"=>"sfsdffsd"}}}}, "commit"=>"Create Recipe"}
-
 
   def find_recipe
     @recipe = Recipe.find params[:id]
