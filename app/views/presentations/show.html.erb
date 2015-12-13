@@ -1,0 +1,36 @@
+<div class="reveal">
+  <div class="slides">
+    <span data-id='<%= @recipe.id %>'></span>
+    <section>
+      <% if @recipe.image.present? %>
+        <%= image_tag @recipe.image.url(:medium), class: "grow" %>
+      <% end %>
+      <h1><%= @recipe.title %></h1>
+    </section>
+    <section>
+      <p id="description"><%= @recipe.description %></p>
+      <p>Cook Time: <%= @recipe.cook_time %></p>
+      <p>Prep Time:<%= @recipe.prep_time %></p>
+    </section>
+    <section>
+      <h3>Ingredients</h3>
+      <ul>
+        <% @recipe.includings.each do |including|  %>
+        <li><%= "#{including.amount} #{including.measure_type} #{including.ingredient.name}" %></li>
+        <% end %>
+      </ul>
+    </section>
+    <section>
+      <h3>Directions</h3>
+    </section>
+    <% @recipe.steps.each do |step|  %>
+    <section>
+      <%= step.body %>
+    </section>
+    <% end %>
+  </div>
+</div>
+<script>
+  Reveal.initialize({
+  });
+</script>

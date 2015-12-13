@@ -1,16 +1,5 @@
 $(document).on('ready', function(){
 
-  $('body').on('click', function(){
-    Reveal.right();
-    simulateKeyPress();
-  });
-
-  $('body').on('dblclick', function(){
-    Reveal.right();
-    // leave slideshow
-    window.location.href = 'http://localhost:3000/test';
-  });
-
   console.log("Custom Nav Loaded");
   console.log(Reveal.getCurrentSlide());
 
@@ -24,8 +13,9 @@ $(document).on('ready', function(){
         console.log("Left!");
         Reveal.left();
       },
-      'Presentation': function() {
+      'Slide Show': function() {
         console.log("Hidden!");
+
         $.ajax({
           url: "/presentations",
           method: 'GET',
@@ -35,11 +25,9 @@ $(document).on('ready', function(){
           success: function(data) {
             console.log("SUCCESS!");
             console.log(data);
-            window.location.href = '/presentations';
+            window.location.href = '/presentations/3';
           }
         });
-        // $('.picture-description').hide();
-        // window.location.href = 'http://localhost:3000/pages';
       },
       'End': function() {
         console.log("Ended!");

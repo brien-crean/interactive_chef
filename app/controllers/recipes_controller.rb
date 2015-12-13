@@ -35,7 +35,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-
     respond_to do |format|
       format.html { render }
       format.json { render json: @recipe.select(:id, :title, :description).to_json }
