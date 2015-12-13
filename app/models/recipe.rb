@@ -1,9 +1,9 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
-  has_many :comments
-  has_many :steps
+  has_many :comments, dependent: :destroy
+  has_many :steps, dependent: :destroy
 
-  has_many :includings
+  has_many :includings, dependent: :destroy
   has_many :ingredients, through: :includings
 
   has_many :taggings, dependent: :destroy

@@ -6,6 +6,7 @@
 <ul class="grid overlay">
   <li>
     <% @recipes.each do |recipe| %>
+    <%= link_to recipe.title, recipe_path(recipe) %>
       <figure>
     <%= link_to recipe_path(recipe) do %>
       <%= image_tag recipe.image %>

@@ -8,28 +8,35 @@
     </div>
 </div>
     <%= f.input :image %>
-<div class="col-md-12"></div>
-<hr>
+<hr />
+
+<div class="col-md-12">
+  <div class="col-md-6">
+    <b>Steps:</b>
+  </div>
+  <div class="col-md-6">
+    <b>Ingredients:</b>
+  </div>
+</div>
+
+
 <div class="col-md-6">
-  <b>Steps:</b>
     <%= f.simple_fields_for :steps do |r| %>
       <%= render "step_fields", f: r %>
     <% end  %>
-</div>
-<div class="links">
-  <%= link_to_add_association "Add Step", f, :steps %>
+    <div class="links">
+      <%= link_to_add_association "Add Step", f, :steps %>
+    </div>
 </div>
 
-<div class="col-md-6">
-  <b>Ingredients:</b>
-    <%= f.simple_fields_for :includings do |r| %>
-            <%= render "including_fields", f: r %>
+<div class="form-group">
+  <%= f.simple_fields_for :includings do |r| %>
+      <%= render "including_fields", f: r %>
     <% end  %>
+  <div class="links">
+    <%= link_to_add_association "Add Ingredient", f, :includings %>
+  </div>
 </div>
-<div class="links">
-  <%= link_to_add_association "Add Ingredient", f, :includings %>
-</div>
-
 
 <div class="form-group col-md-12">
   <%= f.submit %>
