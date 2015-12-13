@@ -25,12 +25,25 @@ $(document).on('ready', function(){
         Reveal.left();
       },
       'Presentation': function() {
-        console.log("Ended!");
-        window.location.href = 'http://localhost:3000/pages';
+        console.log("Hidden!");
+        $.ajax({
+          url: "/presentations",
+          method: 'GET',
+          error: function() {
+            console.log("ERROR!");
+          },
+          success: function(data) {
+            console.log("SUCCESS!");
+            console.log(data);
+            window.location.href = '/presentations';
+          }
+        });
+        // $('.picture-description').hide();
+        // window.location.href = 'http://localhost:3000/pages';
       },
       'End': function() {
         console.log("Ended!");
-        window.location.href = 'http://localhost:3000/test';
+        window.location.href = '/';
       },
       'description': function() {
         var description = $('#description').html();
