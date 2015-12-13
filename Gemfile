@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass'
 gem 'cocoon'
 gem 'rack-cors', :require => 'rack/cors'
+gem 'rails-reveal-js', :git => 'https://github.com/negativetwelve/rails-reveal-js.git'
 
 gem 'font-awesome-rails'
 gem 'carrierwave'

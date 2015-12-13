@@ -7,7 +7,7 @@
 User.create!(first_name: "Brien", last_name: "Crean", email: "brien.crean@gmail.com", password: "password")
 User.create!(first_name: "John", last_name: "Smith", email: "john.smith@gmail.com", password: "password")
 User.create!(first_name: "Mary", last_name: "Rearden", email: "mary.rearden@gmail.com", password: "password")
-User.create!(first_name: "Joe", last_name: "Hennessy", email: "user.@user.com", password: "password")
+User.create!(first_name: "Joe", last_name: "Hennessy", email: "user@user.com", password: "password")
 
 # Ingredient seeds
 i1 = Ingredient.create!(name: "Whole Tomatoes");
