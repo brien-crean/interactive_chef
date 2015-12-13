@@ -16,18 +16,18 @@ $(document).on('ready', function(){
       'Slide Show': function() {
         console.log("Hidden!");
 
-        $.ajax({
-          url: "/presentations",
-          method: 'GET',
-          error: function() {
-            console.log("ERROR!");
-          },
-          success: function(data) {
-            console.log("SUCCESS!");
-            console.log(data);
-            window.location.href = '/presentations/3';
-          }
-        });
+        window.location.href = '/presentations/3';
+        // $.ajax({
+        //   url: "/presentations",
+        //   method: 'GET',
+        //   error: function() {
+        //     console.log("ERROR!");
+        //   },
+        //   success: function(data) {
+        //     console.log("SUCCESS!");
+        //     console.log(data);
+        //   }
+        // });
       },
       'End': function() {
         console.log("Ended!");
