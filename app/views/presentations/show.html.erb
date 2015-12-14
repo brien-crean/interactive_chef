@@ -1,8 +1,9 @@
 <div class="reveal">
   <div class="slides">
+    <span class="header"><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></span>
+    <script type="text/javascript"></script>
     <span id="recipe" data-id='<%= @recipe.id %>'></span>
     <section>
-      <p><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></p>
       <% if @recipe.image.present? %>
         <%= image_tag @recipe.image.url(:medium), class: "grow" %>
       <% end %>
@@ -14,7 +15,6 @@
       <p>Prep Time:<%= @recipe.prep_time %></p>
     </section>
     <section id="ingredients">
-      <p><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></p>
       <h3>Ingredients</h3>
       <ul>
         <% @recipe.includings.each do |including|  %>
@@ -22,14 +22,14 @@
         <% end %>
       </ul>
     </section>
-    <section>
-      <h3>Directions</h3>
-    </section>
     <% @recipe.steps.each do |step|  %>
-    <section>
-      <p><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></p>
-      <%= step.body %>
-    </section>
+      <section>
+        <h3>Directions</h3>
+        <span class="step" data-id='<%= step.id %>'>
+          <b> <%= "Step #{step.id} of #{@recipe.steps.count}" %></b>
+        </span>
+        <p style="text-align:left;"> <%= step.body %></p>
+      </section>
     <% end %>
   </div>
 </div>

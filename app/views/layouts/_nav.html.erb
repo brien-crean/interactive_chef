@@ -1,14 +1,16 @@
 <nav class="nav">
-  <div class="nav-content pull-left">
+  <div class="pull-left">
     <%= link_to recipes_path do %>
       <%= image_tag "knifey_spoony.png" %>
     <% end  %>
     <span class="logo">Knifey Spoony</span>
+  </div>
+  <div class="nav-content pull-left">
     <%= link_to "Recipes", recipes_path %>
     |
     <%= link_to "Add Recipe", new_recipe_path %>
   </div>
-  <div class="nav-content pull-right">
+  <div class="nav-content">
     <% if user_signed_in? %>
       <%=link_to "Hello #{current_user.first_name} !"%>
       |

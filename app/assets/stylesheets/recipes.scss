@@ -26,7 +26,10 @@ body{
   text-align: center;
 }
 .nav-content {
+  text-decoration: none;
   height: 100%;
+  display: inline-block;
+  vertical-align: text-bottom;
 }
 
 .picture-description{

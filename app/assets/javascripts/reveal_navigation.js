@@ -1,17 +1,24 @@
 $(document).on('ready', function(){
 
-  console.log("Custom Nav Loaded");
-  console.log(Reveal.getCurrentSlide());
-
+  // console.log("Custom Nav Loaded");
+  // console.log(Reveal.getCurrentSlide());
+var state;
   if (annyang) {
     var commands = {
       'Next': function() {
         console.log("Right!");
         Reveal.right();
+        state = Reveal.getState();
+        // console.log(state);
       },
       'Back': function() {
         console.log("Left!");
         Reveal.left();
+        state = Reveal.getState();
+        // console.log(state);
+      },
+      'Resume': function() {
+        Reveal.setState( state );
       },
       'Slide Show': function() {
         var recipe = $("#recipe").data("id");
