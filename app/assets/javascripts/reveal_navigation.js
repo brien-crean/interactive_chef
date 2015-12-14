@@ -5,30 +5,41 @@ $(document).on('ready', function(){
 
   if (annyang) {
     var commands = {
-      'Right': function() {
+      'Next': function() {
         console.log("Right!");
         Reveal.right();
       },
-      'Left': function() {
+      'Back': function() {
         console.log("Left!");
         Reveal.left();
       },
       'Slide Show': function() {
-        console.log("Presentation started!");
         var recipe = $("#recipe").data("id");
-        window.location.href = '/presentations/' + recipe;
+        if (recipe){
+          console.log("Presentation started!");
+          window.location.href = '/presentations/' + recipe;
+        }else{
+          speak("This feature is only available when viewing a recipe");
+        }
       },
       'End': function() {
-        console.log("Ended Presentation!");
         var recipe = $("#recipe").data("id");
-        console.log(recipe);
-        window.location.href = '/recipes/' + recipe;
+        if (recipe){
+          console.log("Ended Presentation!");
+          console.log(recipe);
+          window.location.href = '/recipes/' + recipe;
+        }else{
+          speak("This feature is only available when viewing a recipe");
+        }
       },
       'description': function() {
         var description = $('#description').html();
         console.log(description);
         speak(description);
         console.log("Description!");
+      },
+      'ingredients': function() {
+        Reveal.slide( 2 );
       }
     };
 

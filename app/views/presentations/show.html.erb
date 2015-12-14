@@ -2,6 +2,7 @@
   <div class="slides">
     <span id="recipe" data-id='<%= @recipe.id %>'></span>
     <section>
+      <p><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></p>
       <% if @recipe.image.present? %>
         <%= image_tag @recipe.image.url(:medium), class: "grow" %>
       <% end %>
@@ -12,7 +13,8 @@
       <p>Cook Time: <%= @recipe.cook_time %></p>
       <p>Prep Time:<%= @recipe.prep_time %></p>
     </section>
-    <section>
+    <section id="ingredients">
+      <p><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></p>
       <h3>Ingredients</h3>
       <ul>
         <% @recipe.includings.each do |including|  %>
@@ -25,6 +27,7 @@
     </section>
     <% @recipe.steps.each do |step|  %>
     <section>
+      <p><%= "Cook Time: #{@recipe.cook_time} Prep Time: #{@recipe.prep_time}" %></p>
       <%= step.body %>
     </section>
     <% end %>

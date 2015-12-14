@@ -1,27 +1,25 @@
 
 <div class="container">
-<!-- <div class=""> -->
-
-  <h1>Welcome!</h1>
-<ul class="grid overlay">
-    <% @recipes.each do |recipe| %>
-    <li>
-      <% if recipe.image.present? %>
-        <figure>
-          <%= link_to recipe_path(recipe) do %>
-          <%= image_tag recipe.image %>
-          <figcaption>
-          <h4> <%= recipe.title %> </h4>
-          <!-- <span><%= recipe.description %></span> -->
-          <h4>Rating: ****</h4>
-          </figcaption>
-          <% end %>
-        </figure>
-      <% else %>
-        <%= link_to recipe.title, recipe_path(recipe) %>
+  <h4 class="main-headings">Recently Added</h4>
+  <ul class="grid overlay">
+      <% @recipes.each do |recipe| %>
+      <li>
+        <% if recipe.image.present? %>
+          <figure>
+            <%= link_to recipe_path(recipe) do %>
+            <%= image_tag recipe.image %>
+            <figcaption>
+            <h4> <%= recipe.title %> </h4>
+            <!-- <span><%= recipe.description %></span> -->
+            <h4>Rating: ****</h4>
+            </figcaption>
+            <% end %>
+          </figure>
+        <% else %>
+          <%= link_to recipe.title, recipe_path(recipe) %>
+        <% end  %>
       <% end  %>
-    <% end  %>
-  </li>
-</ul>
+    </li>
+  </ul>
   <!-- <input id="button" type="button" name="name" value="Text to Speech Test"> -->
 </div>
