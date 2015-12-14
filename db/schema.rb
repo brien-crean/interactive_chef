@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151209071429) do
+ActiveRecord::Schema.define(version: 20151214041237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20151209071429) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "includings", force: :cascade do |t|
-    t.integer  "amount"
+    t.float    "amount"
     t.string   "measure_type"
     t.integer  "ingredient_id"
     t.integer  "recipe_id"

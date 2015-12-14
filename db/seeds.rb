@@ -73,6 +73,37 @@ i56  = Ingredient.create!(name: "Corn, Kernels sliced off");
 i57  = Ingredient.create!(name: "Low-Sodium Vegetable Broth");
 i58  = Ingredient.create!(name: "unsweetened plain almond milk (or regular milk)");
 i59  = Ingredient.create!(name: "Chopped Green Onions");
+i60  = Ingredient.create!(name: "Red Bell Pepper");
+i61  = Ingredient.create!(name: "Fajita Seasoning Mix");
+i62  = Ingredient.create!(name: "Vegetable Oil");
+i63  = Ingredient.create!(name: "6 inch Soft Tortillas");
+i64  = Ingredient.create!(name: "Sour Cream");
+i65  = Ingredient.create!(name: "Salsa");
+i66  = Ingredient.create!(name: "Butternut Squash, halved lengthwise and seeded");
+i67  = Ingredient.create!(name: "Chopped Fresh Oregano");
+i68  = Ingredient.create!(name: "Unsalted Butter, melted");
+i69  = Ingredient.create!(name: "Wonton Wrappers");
+i70  = Ingredient.create!(name: "Large Egg, lightly beaten");
+i71  = Ingredient.create!(name: "Garlic");
+i72  = Ingredient.create!(name: "Fresh Baby Spinach");
+i73  = Ingredient.create!(name: "Fresh Basil");
+i74  = Ingredient.create!(name: "Toasted Walnuts, chopped");
+i75  = Ingredient.create!(name: "Extra-Virgin Olive Oil");
+i76  = Ingredient.create!(name: "Farfalle (Bowtie) Pasta, boiled to al dente and drained");
+i77  = Ingredient.create!(name: "Boneless Skinless Chicken Breast, sautéed or grilled, cut into ½ inch cubes");
+i78  = Ingredient.create!(name: "Green Bell Pepper");
+i79  = Ingredient.create!(name: "Yellow Bell Pepper");
+i80  = Ingredient.create!(name: "Purple Onion");
+i81  = Ingredient.create!(name: "Butter");
+i82  = Ingredient.create!(name: "Chicken Broth");
+i83  = Ingredient.create!(name: "Half-and-Half");
+i84  = Ingredient.create!(name: "Cajun Seasoning");
+i85  = Ingredient.create!(name: "Shredded Asiago Cheese");
+i86  = Ingredient.create!(name: "Large Head of Cauliflower, broken into florets");
+i87  = Ingredient.create!(name: "Large Lemon, zested & juiced");
+i88  = Ingredient.create!(name: "Ground Sumac");
+i89  = Ingredient.create!(name: "Garlic Powder");
+
 
 recipe1 = Recipe.create!(title: "Lasagna", description: "This is a Classic Lasagna recipe filled with layers of homemade tomato meat sauce,
 creamy ricotta, al dente noodles, and topped with mozzarella and Parmesan.",
@@ -87,14 +118,34 @@ cook_time: 35, prep_time: 10, user_id: 1)
 recipe4 = Recipe.create!(title: "Corn Soup", description: "The recipe is simple: 9 ingredients total, and has the perfect balance of sweet and savory flavors, is healthy, and makes an ideal light lunch or dinner when accompanied with bread, a sandwich or a salad. Not only is it both vegan and gluten free, but it can also be prepared one of two ways: Blended and smooth, or chunky and brothy.",
 cook_time: 20, prep_time: 10, user_id: 1)
 
-recipe1.image = Rails.root.join("app/assets/images/lasagne.jpg").open
+recipe5 = Recipe.create!(title: "Oven-Baked Chicken Fajitas", description: "Make fajitas easier than ever with this oven shortcut that will save you time, but won’t skimp on flavor.",
+cook_time: 40, prep_time: 10, user_id: 1)
+
+recipe6 = Recipe.create!(title: "Butternut Squash Ravioli with Spinach Pesto", description: "This Butternut Squash Ravioli with Spinach Pesto recipe uses supermarket wonton wrappers to create a shortcut weeknight ravioli treat.",
+cook_time: 40, prep_time: 35, user_id: 1)
+
+recipe7 = Recipe.create!(title: "Cajun Chicken Pasta Bake", description: "This Creamy Cajun Chicken Bake is great for a quick meal while still having a lot of flavor. This is something the whole family will love.",
+cook_time: 50, prep_time: 10, user_id: 1)
+
+recipe8 = Recipe.create!(title: "Lemon Roasted Cauliflower With Cumin & Sumac", description: "This roasted cauliflower side-dish is crispy, salty, lemony, earthy, tangy and out of this world! The sumac and lemon work together to brighten the the tartness while the cumin adds an earthy simmer.",
+cook_time: 30, prep_time: 5, user_id: 1)
+
+recipe1.image = Rails.root.join("app/assets/images/lasagna_carousel.png").open
 recipe1.save!
-recipe2.image = Rails.root.join("app/assets/images/hummus.jpg").open
+recipe2.image = Rails.root.join("app/assets/images/hummus_carousel.png").open
 recipe2.save!
-recipe3.image = Rails.root.join("app/assets/images/italian_chicken_bake.jpg").open
+recipe3.image = Rails.root.join("app/assets/images/italian_chicken_bake_carousel.png").open
 recipe3.save!
-recipe4.image = Rails.root.join("app/assets/images/corn-soup.jpg").open
+recipe4.image = Rails.root.join("app/assets/images/corn_soup_carousel.png").open
 recipe4.save!
+recipe5.image = Rails.root.join("app/assets/images/lasagna_carousel.png").open
+recipe5.save!
+recipe6.image = Rails.root.join("app/assets/images/hummus_carousel.png").open
+recipe6.save!
+recipe7.image = Rails.root.join("app/assets/images/italian_chicken_bake_carousel.png").open
+recipe7.save!
+recipe8.image = Rails.root.join("app/assets/images/corn_soup_carousel.png").open
+recipe8.save!
 
 Step.create!(body: "In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 tablespoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.", recipe_id: 1)
 
@@ -144,6 +195,34 @@ Step.create!(body: "Transfer soup back to the saucepan and bring back to a simme
 
 Step.create!(body: "To serve, top with chopped green onion, remaining fresh (or lightly sauteed) corn, and black pepper. Add a sprinkle of paprika for color.", recipe_id: 4)
 
+Step.create!(body: "Heat oven to 400°F. Spray 13x9-inch (3-quart) glass baking dish with cooking spray. Cut onion and bell pepper into even slices; place in baking dish.", recipe_id: 5)
+
+Step.create!(body: "Cut chicken breasts into thin strips; add to vegetables in dish. Sprinkle with seasoning mix; drizzle with oil. Stir until combined and pieces are coated.", recipe_id: 5)
+
+Step.create!(body: "Bake 35 to 40 minutes, stirring once halfway through baking, until chicken is no longer pink in center.", recipe_id: 5)
+
+Step.create!(body: "Spoon small amount of chicken and veggies onto each tortilla. Top each with sour cream and salsa, or your favorite fajita toppings.", recipe_id: 5)
+
+Step.create!(body: "Preheat oven to 400°F.", recipe_id: 6)
+
+Step.create!(body: "Place squash halves, cut sides down, on a foil-lined baking sheet coated with cooking spray. Bake at 400° for 30 minutes or until tender. Cool. Scoop out pulp; discard peel. Mash pulp. Combine oregano, squash pulp, and butter in a large bowl. Stir in 2 ounces (about 1/2 cup) cheese, 1/4 teaspoon salt, and 1/4 teaspoon pepper. Working with 1 wonton wrapper at a time (cover remaining wrappers with a damp towel to keep them from drying), spoon about 1 1/2 teaspoons squash mixture into center of each wrapper. Moisten edges of wrapper with beaten egg; bring 2 opposite corners together. Pinch edges together to seal, forming a triangle. Repeat procedure with remaining wrappers, squash mixture, and egg. Cover ravioli loosely with a towel to prevent drying.", recipe_id: 6)
+
+Step.create!(body: "Place garlic in a food processor, and pulse until finely chopped. Add remaining 1/2 ounce (about 2 tablespoons) cheese, remaining 1/8 teaspoon salt, remaining 1/4 teaspoon pepper, spinach, basil, and 2 tablespoons walnuts. With processor on, slowly pour oil, broth, and juice through food chute. Process until well blended. Place pesto in a large bowl.", recipe_id: 6)
+
+Step.create!(body: "Bring 6 quarts water to a boil in a large Dutch oven. Add half of ravioli; cook 3 minutes or until thoroughly cooked. Remove ravioli with a slotted spoon. Repeat procedure with remaining ravioli. Add ravioli to pesto; toss gently to coat. Arrange 6 ravioli on each of 6 plates; sprinkle each serving with 1 teaspoon walnuts.", recipe_id: 6)
+
+Step.create!(body: "Heat oven to 350°F. Lightly spray baking dish with cooking spray.", recipe_id: 7)
+
+Step.create!(body: "TCook pasta as directed on the packaging and drain.", recipe_id: 7)
+
+Step.create!(body: "In a large sauce pan heat 3 tablespoons of olive oil, add sliced onion, garlic, sliced red, green and yellow peppers and sauté until they are slightly tender. Remove from pan and set aside.", recipe_id: 7)
+
+Step.create!(body: "Using the same pan. Melt butter in a saucepan over medium heat. Stir in flour. Gradually stir in broth. Heat to boiling, stirring constantly; remove from heat. Stir in half-and-half, Cajun seasoning, 1/2 cup of parmesan, chicken and pepper mixture.", recipe_id: 7)
+
+Step.create!(body: "Add pasta to chicken mixture; toss gently to mix well. Spoon into baking dish. Sprinkle with cheese. Bake uncovered about 20-30 minutes or until cheese is melted and warm in the center.", recipe_id: 7)
+
+Step.create!(body: "Preheat oven to 425°F.", recipe_id: 8)
+
 Including.create!(amount: 1, measure_type: "pound", ingredient_id: i7.id, recipe_id: recipe1.id )
 Including.create!(amount: 0.75, measure_type: "pound", ingredient_id: i34.id, recipe_id: recipe1.id )
 Including.create!(amount: 0.5, measure_type: "cup", ingredient_id: i8.id, recipe_id: recipe1.id )
@@ -191,3 +270,55 @@ Including.create!(amount: 3, measure_type: "ear", ingredient_id: i56.id, recipe_
 Including.create!(amount: 2, measure_type: "cup", ingredient_id: i57.id, recipe_id: recipe4.id )
 Including.create!(amount: 2, measure_type: "cup", ingredient_id: i58.id, recipe_id: recipe4.id )
 Including.create!(amount: 3, measure_type: "qty", ingredient_id: i59.id, recipe_id: recipe4.id )
+
+
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i40.id, recipe_id: recipe5.id )
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i60.id, recipe_id: recipe5.id )
+Including.create!(amount: 1, measure_type: "pound", ingredient_id: i49.id, recipe_id: recipe5.id )
+Including.create!(amount: 1, measure_type: "ounce", ingredient_id: i61.id, recipe_id: recipe5.id )
+Including.create!(amount: 2, measure_type: "tbsp", ingredient_id: i62.id, recipe_id: recipe5.id )
+Including.create!(amount: 1, measure_type: "package", ingredient_id: i63.id, recipe_id: recipe5.id )
+Including.create!(amount: 1, measure_type: "cup", ingredient_id: i64.id, recipe_id: recipe5.id )
+Including.create!(amount: 1, measure_type: "cup", ingredient_id: i65.id, recipe_id: recipe5.id )
+
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i66.id, recipe_id: recipe6.id )
+Including.create!(amount: 1, measure_type: "tbsp", ingredient_id: i67.id, recipe_id: recipe6.id )
+Including.create!(amount: 2, measure_type: "tbsp", ingredient_id: i68.id, recipe_id: recipe6.id )
+Including.create!(amount: 2.5, measure_type: "ounce", ingredient_id: i18.id, recipe_id: recipe6.id )
+Including.create!(amount: 0.375, measure_type: "tsp", ingredient_id: i28.id, recipe_id: recipe6.id )
+Including.create!(amount: 0.5, measure_type: "tsp", ingredient_id: i45.id, recipe_id: recipe6.id )
+Including.create!(amount: 36, measure_type: "qty", ingredient_id: i69.id, recipe_id: recipe6.id )
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i70.id, recipe_id: recipe6.id )
+Including.create!(amount: 2, measure_type: "clove", ingredient_id: i71.id, recipe_id: recipe6.id )
+Including.create!(amount: 1.5, measure_type: "cup", ingredient_id: i72.id, recipe_id: recipe6.id )
+Including.create!(amount: 0.5, measure_type: "cup", ingredient_id: i73.id, recipe_id: recipe6.id )
+Including.create!(amount: 0.25, measure_type: "cup", ingredient_id: i74.id, recipe_id: recipe6.id )
+Including.create!(amount: 2, measure_type: "tbsp", ingredient_id: i75.id, recipe_id: recipe6.id )
+Including.create!(amount: 2, measure_type: "tbsp", ingredient_id: i57.id, recipe_id: recipe6.id )
+Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i31.id, recipe_id: recipe6.id )
+Including.create!(amount: 6, measure_type: "quart", ingredient_id: i29.id, recipe_id: recipe6.id )
+
+Including.create!(amount: 0.5, measure_type: "pound", ingredient_id: i76.id, recipe_id: recipe7.id )
+Including.create!(amount: 1, measure_type: "pound", ingredient_id: i77.id, recipe_id: recipe7.id )
+Including.create!(amount: 3, measure_type: "tbsp", ingredient_id: i19.id, recipe_id: recipe7.id )
+Including.create!(amount: 3, measure_type: "clove", ingredient_id: i47.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.5, measure_type: "qty", ingredient_id: i60.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.5, measure_type: "qty", ingredient_id: i78.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.5, measure_type: "qty", ingredient_id: i79.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.5, measure_type: "qty", ingredient_id: i80.id, recipe_id: recipe7.id )
+Including.create!(amount: 4, measure_type: "tbsp", ingredient_id: i81.id, recipe_id: recipe7.id )
+Including.create!(amount: 2, measure_type: "tbsp", ingredient_id: i41.id, recipe_id: recipe7.id )
+Including.create!(amount: 14.5, measure_type: "ounce", ingredient_id: i82.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.5, measure_type: "cup", ingredient_id: i83.id, recipe_id: recipe7.id )
+Including.create!(amount: 3, measure_type: "tsp", ingredient_id: i84.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.5, measure_type: "cup", ingredient_id: i18.id, recipe_id: recipe7.id )
+Including.create!(amount: 0.33, measure_type: "cup", ingredient_id: i85.id, recipe_id: recipe7.id )
+
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i86.id, recipe_id: recipe8.id )
+Including.create!(amount: 0.33, measure_type: "cup", ingredient_id: i19.id, recipe_id: recipe8.id )
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i87.id, recipe_id: recipe8.id )
+Including.create!(amount: 1, measure_type: "tbsp", ingredient_id: i25.id, recipe_id: recipe8.id )
+Including.create!(amount: 1, measure_type: "tbsp", ingredient_id: i88.id, recipe_id: recipe8.id )
+Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i89.id, recipe_id: recipe8.id )
+Including.create!(amount: 1, measure_type: "pinch", ingredient_id: i48.id, recipe_id: recipe8.id )
+Including.create!(amount: 1, measure_type: "dash", ingredient_id: i45.id, recipe_id: recipe8.id )

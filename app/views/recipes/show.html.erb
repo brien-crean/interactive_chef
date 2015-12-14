@@ -23,7 +23,9 @@
     <h3>Ingredients</h3>
     <ul>
       <% @recipe.includings.each do |including|  %>
-      <li><%= "#{including.amount} #{including.measure_type} #{including.ingredient.name}" %></li>
+      <li><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
+              #{including.measure_type} #{including.ingredient.name}" %>
+      </li>
       <% end %>
     </ul>
   </div>
