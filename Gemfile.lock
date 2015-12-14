@@ -209,6 +209,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
+  nokogiri
   pg
   quiet_assets
   rack-cors

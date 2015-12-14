@@ -1,24 +1,3 @@
-if (annyang) {
-  var commands = {
-    'Annyang': function() {
-      console.log("Annyang!");
-    },
-    'description': function() {
-      var description = $('#description').html();
-      console.log(description);
-      speak(description);
-      console.log("Description!");
-    }
-  };
-
-  annyang.addCommands(commands);
-
-  annyang.start();
-}
-else{
-      console.log("Error!");
-}
-
 // called by each word/phrase recognised by Annyang commands
 function speak(input){
   var msg = new SpeechSynthesisUtterance(input);

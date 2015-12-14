@@ -1,0 +1,2 @@
+module ScrapeRecipesHelper
+end

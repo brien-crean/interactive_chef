@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Add URL of Recipe to Save</h1>
+  <%= form_tag scrape_recipes_path do %>
+  <div class="col-md-6">
+    <%= label_tag :URL %>
+    <%= text_field_tag :URL, "", class: "form-control" %>
+    <%= submit_tag "Get Recipe", class: "" %>
+  </div>
+  <% end %>
+</div>

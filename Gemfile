@@ -22,6 +22,7 @@ gem 'mini_magick'
 gem 'simple_form'
 gem 'simple_form_fancy_uploads'
 gem 'faker'
+gem 'nokogiri'
 gem 'rails_12factor', group: :production
 
 group :development, :test do
