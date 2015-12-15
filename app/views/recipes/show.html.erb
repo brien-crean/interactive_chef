@@ -51,4 +51,20 @@
     <% end %>
   <% end  %>
 
+  <p>Comments</p>
+
+  <% @recipe.comments.each do |comment| %>
+    <%= comment.body %>
+  <% end %>
+
+  <%= simple_form_for [@recipe, @comment] do |f| %>
+    <div class="form-group">
+      <%= f.label :body %>
+      <%= f.text_area :body, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary", data: {disable_with: "Saving..."} %>
+    </div>
+  <% end %>
+
 </div>
