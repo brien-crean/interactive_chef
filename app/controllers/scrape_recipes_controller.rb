@@ -33,6 +33,7 @@ class ScrapeRecipesController < ApplicationController
   end
 
   def create
+
     scrape_url = params[:URL]
     recipe_scrape = open(scrape_url)
     doc = Nokogiri::HTML(recipe_scrape)
@@ -55,23 +56,19 @@ class ScrapeRecipesController < ApplicationController
     # Directions
     @directions_list = doc.css(direction_list_selector)
 
-
-
-    @directions_array = @directions_list.map {|direction| direction.text}
-
-    @recipe = Recipe.new
-
-    @recipe.title = @title
+    @recipe             = Recipe.new
+    @recipe.title       = @title
     @recipe.description = @description
-    # @recipe.steps = @directions_array
+    @recipe.save
 
-    # @recipe.image = @image
+    @directions_list.each do |direction|
+      @step           = Step.new
+      @step.body      =  direction.text
+      @step.recipe_id = @recipe.id
+      @step.save unless @step.body == ""
+    end
 
-
-    # @recipe.save
-
-    # redirect_to @recipe
-    render text: @directions_list.class
+    redirect_to @recipe
   end
 
   def show

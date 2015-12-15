@@ -5,13 +5,13 @@ var state;
   if (annyang) {
     var commands = {
       'Next': function() {
-        console.log("Right!");
+        // console.log("Right!");
         Reveal.right();
         state = Reveal.getState();
         // console.log(state);
       },
       'Back': function() {
-        console.log("Left!");
+        // console.log("Left!");
         Reveal.left();
         state = Reveal.getState();
         // console.log(state);
@@ -22,7 +22,7 @@ var state;
       'Slide Show': function() {
         var recipe = $("#recipe").data("id");
         if (recipe){
-          console.log("Presentation started!");
+          // console.log("Presentation started!");
           window.location.href = '/presentations/' + recipe;
         }else{
           speak("This feature is only available when viewing a recipe");
@@ -31,8 +31,8 @@ var state;
       'End': function() {
         var recipe = $("#recipe").data("id");
         if (recipe){
-          console.log("Ended Presentation!");
-          console.log(recipe);
+          // console.log("Ended Presentation!");
+          // console.log(recipe);
           window.location.href = '/recipes/' + recipe;
         }else{
           speak("This feature is only available when viewing a recipe");
@@ -40,12 +40,15 @@ var state;
       },
       'description': function() {
         var description = $('#description').html();
-        console.log(description);
+        // console.log(description);
         speak(description);
-        console.log("Description!");
+        // console.log("Description!");
       },
       'ingredients': function() {
         Reveal.slide( 2 );
+      },
+      'Step *num': function(num) {
+        console.log(num)
       },
       'timer *term': function(term){
         var timeArray   = term.split(" ")
@@ -55,7 +58,11 @@ var state;
 
         function setCounter(){
           console.log(timeCounter);
-          timeCounter --;
+          if (timeCounter > 0){
+            timeCounter --;
+          }else{
+            clearInterval(timer);
+          }
         }
         var timer = setInterval(setCounter, 1000);
       }

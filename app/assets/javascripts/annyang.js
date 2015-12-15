@@ -134,7 +134,7 @@
 
       // Sets the language to the default 'en-US'. This can be changed with annyang.setLanguage()
       // recognition.lang = 'en-US';
-      recognition.lang = 'en-IE';
+      recognition.lang = 'en-GB';
 
       recognition.onstart   = function()      { invokeCallbacks(callbacks.start); };
 
@@ -193,6 +193,7 @@
         for (var i = 0; i<results.length; i++) {
           // the text recognized
           commandText = results[i].trim();
+          console.log("You said :" + commandText);
           if (debugState) {
             root.console.log('Speech recognized: %c'+commandText, debugStyle);
           }
