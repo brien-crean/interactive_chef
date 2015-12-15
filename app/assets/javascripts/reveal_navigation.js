@@ -1,5 +1,4 @@
 $(document).on('ready', function(){
-
   // console.log("Custom Nav Loaded");
   // console.log(Reveal.getCurrentSlide());
 var state;
@@ -47,6 +46,18 @@ var state;
       },
       'ingredients': function() {
         Reveal.slide( 2 );
+      },
+      'timer *term': function(term){
+        var timeArray   = term.split(" ")
+        var timeCounter = timeArray[0];
+        var timeType    = timeArray[1];
+        console.log(timeCounter + " " + timeType);
+
+        function setCounter(){
+          console.log(timeCounter);
+          timeCounter --;
+        }
+        var timer = setInterval(setCounter, 1000);
       }
     };
 

@@ -41,7 +41,14 @@
 </div>
 
 
-    <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
-    <%= link_to "Delete", recipe_path(@recipe), class: "btn red-button", method: :delete %>
+  <%= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
+  <%= link_to "Delete", recipe_path(@recipe), class: "btn red-button", method: :delete %>
+
+  <% if @recipe.tags.any? %>
+  Tagged with:
+    <% @recipe.tags.each do |tag| %>
+    <div class="label label-primary"><%= tag.name %></div>
+    <% end %>
+  <% end  %>
 
 </div>

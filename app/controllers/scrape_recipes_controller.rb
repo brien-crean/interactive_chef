@@ -10,7 +10,7 @@ class ScrapeRecipesController < ApplicationController
     # All Recipes CSS selectors
     title_selector            =   ".recipe-summary__h1"
     ingredient_list_selector  =   ".added"
-    direction_list_selector   =   ".recipe-directions__list--item"
+      direction_list_selector   =   ".recipe-directions__list--item"
     image_selector            =   ".rec-photo"
 
     # Title
@@ -55,21 +55,23 @@ class ScrapeRecipesController < ApplicationController
     # Directions
     @directions_list = doc.css(direction_list_selector)
 
+
+
     @directions_array = @directions_list.map {|direction| direction.text}
 
     @recipe = Recipe.new
 
     @recipe.title = @title
     @recipe.description = @description
-    @recipe.steps = @directions_array
+    # @recipe.steps = @directions_array
 
     # @recipe.image = @image
 
 
     # @recipe.save
 
-    redirect_to @recipe
-    # render text: @directions_array
+    # redirect_to @recipe
+    render text: @directions_list.class
   end
 
   def show

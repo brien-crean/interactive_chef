@@ -322,3 +322,10 @@ Including.create!(amount: 1, measure_type: "tbsp", ingredient_id: i88.id, recipe
 Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i89.id, recipe_id: recipe8.id )
 Including.create!(amount: 1, measure_type: "pinch", ingredient_id: i48.id, recipe_id: recipe8.id )
 Including.create!(amount: 1, measure_type: "dash", ingredient_id: i45.id, recipe_id: recipe8.id )
+
+Tag.create!(name: "Italian")
+Tag.create!(name: "Persian")
+Tag.create!(name: "Mexican")
+Tag.create!(name: "Main Dish")
+Tag.create!(name: "Dessert")
+Tag.create!(name: "Quick and Easy")

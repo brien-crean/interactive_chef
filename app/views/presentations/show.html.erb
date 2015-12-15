@@ -22,11 +22,13 @@
         <% end %>
       </ul>
     </section>
+    <% counter = 1 %>
     <% @recipe.steps.each do |step|  %>
       <section>
         <h3>Directions</h3>
-        <span class="step" data-id='<%= step.id %>'>
-          <b> <%= "Step #{step.id} of #{@recipe.steps.count}" %></b>
+        <span class="step" data-id='<%= "step#{counter}" %>'>
+          <b> <%= "Step #{counter} of #{@recipe.steps.count}" %></b>
+          <% counter += 1 %>
         </span>
         <p style="text-align:left;"> <%= step.body %></p>
       </section>
