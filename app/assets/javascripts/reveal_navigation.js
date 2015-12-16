@@ -1,28 +1,34 @@
 $(document).on('ready', function(){
-  // console.log("Custom Nav Loaded");
-  // console.log(Reveal.getCurrentSlide());
-var state;
+  var state;
   if (annyang) {
     var commands = {
       'Next': function() {
-        // console.log("Right!");
         Reveal.right();
         state = Reveal.getState();
-        // console.log(state);
       },
       'Back': function() {
-        // console.log("Left!");
         Reveal.left();
         state = Reveal.getState();
-        // console.log(state);
+      },
+      'Right': function() {
+        Reveal.right();
+        state = Reveal.getState();
+      },
+      'Left': function() {
+        Reveal.left();
+        state = Reveal.getState();
+      },
+      'Previous': function() {
+        Reveal.left();
+        state = Reveal.getState();
       },
       'Resume': function() {
+        console.log(state);
         Reveal.setState( state );
       },
       'Slide Show': function() {
         var recipe = $("#recipe").data("id");
         if (recipe){
-          // console.log("Presentation started!");
           window.location.href = '/presentations/' + recipe;
         }else{
           speak("This feature is only available when viewing a recipe");
@@ -31,24 +37,26 @@ var state;
       'End': function() {
         var recipe = $("#recipe").data("id");
         if (recipe){
-          // console.log("Ended Presentation!");
-          // console.log(recipe);
           window.location.href = '/recipes/' + recipe;
         }else{
           speak("This feature is only available when viewing a recipe");
         }
       },
-      'description': function() {
-        var description = $('#description').html();
-        // console.log(description);
-        speak(description);
-        // console.log("Description!");
-      },
-      'ingredients': function() {
+      'Ingredients': function() {
         Reveal.slide( 2 );
       },
-      'Step *num': function(num) {
-        console.log(num)
+      'Step *slide': function(slide) {
+        var inc = parseInt(slide) + 2;
+        Reveal.slide( inc);
+        state = Reveal.getState();
+      },
+      'Speak description': function() {
+        var description = $('#description').html();
+        speak(description);
+      },
+      'Speak step *num': function(num) {
+        var step = $('#step' + num).html();
+        speak(step);
       },
       'timer *term': function(term){
         var timeArray   = term.split(" ")
@@ -77,3 +85,11 @@ var state;
   }
 
 });
+
+
+function speak(input){
+  var msg = new SpeechSynthesisUtterance(input);
+  msg.lang = 'en-IE';
+  window.speechSynthesis.speak(msg);
+  console.log("Text Recognised was: " + input);
+}

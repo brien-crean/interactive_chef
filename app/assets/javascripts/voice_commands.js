@@ -1,11 +1,4 @@
 // called by each word/phrase recognised by Annyang commands
-function speak(input){
-  var msg = new SpeechSynthesisUtterance(input);
-  msg.lang = 'en-US';
-  window.speechSynthesis.speak(msg);
-  console.log("Text Recognised was: " + input);
-}
-
 // Text to Speech test
 $(document).ready(function(){
   $("#button").on('click', function() {

@@ -11,11 +11,14 @@
     </section>
     <section>
       <p id="description"><%= @recipe.description %></p>
-      <p>Cook Time: <%= @recipe.cook_time %></p>
-      <p>Prep Time:<%= @recipe.prep_time %></p>
     </section>
     <section id="ingredients">
       <h3>Ingredients</h3>
+      <ul>
+        <% @recipe.includings.each do |including|  %>
+        <li><%= "#{Rational(including.amount)} #{including.measure_type} #{including.ingredient.name}" %></li>
+        <% end %>
+      </ul>
       <ul>
         <% @recipe.includings.each do |including|  %>
         <li><%= "#{Rational(including.amount)} #{including.measure_type} #{including.ingredient.name}" %></li>
@@ -28,14 +31,16 @@
         <h3>Directions</h3>
         <span class="step" data-id='<%= "step#{counter}" %>'>
           <b> <%= "Step #{counter} of #{@recipe.steps.count}" %></b>
-          <% counter += 1 %>
         </span>
-        <p style="text-align:left;"> <%= step.body %></p>
+        <p id="step<%=counter%>" style="text-align:left;"> <%= step.body %></p>
+        <% counter += 1 %>
       </section>
     <% end %>
   </div>
 </div>
 <script>
   Reveal.initialize({
+    slideNumber: 'c/t',
+    transition: 'convex'
   });
 </script>
