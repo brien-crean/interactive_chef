@@ -19,11 +19,6 @@
         <li><%= "#{Rational(including.amount)} #{including.measure_type} #{including.ingredient.name}" %></li>
         <% end %>
       </ul>
-      <ul>
-        <% @recipe.includings.each do |including|  %>
-        <li><%= "#{Rational(including.amount)} #{including.measure_type} #{including.ingredient.name}" %></li>
-        <% end %>
-      </ul>
     </section>
     <% counter = 1 %>
     <% @recipe.steps.each do |step|  %>
