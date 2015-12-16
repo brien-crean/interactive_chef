@@ -10,7 +10,7 @@
     <%#= f.select :ingredient, options_from_collection_for_select(Ingredient.all, :id, :name),
         {prompt: "Select an ingredient..."}, {class: "form-control"} %>
   </div>
-  <%= link_to_remove_association fa_icon("minus-square", text: "Remove Ingredient"), f %>
+  <%= link_to_remove_association fa_icon("minus-square", text: "Remove"), f %>
 </div>
 
 

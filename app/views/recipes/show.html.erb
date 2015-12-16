@@ -7,11 +7,14 @@
       <%= image_tag @recipe.image.url(:medium), class: "grow" %>
     <% end %>
   </div>
+  <div class="title-description">
+
     <h1><%= @recipe.title %></h1>
 
     <p id="description"><%= @recipe.description %></p>
     <p>Cook Time: <%= @recipe.cook_time %></p>
-    <p>Prep Time:<%= @recipe.prep_time %></p>
+    <p>Prep Time: <%= @recipe.prep_time %></p>
+  </div>
 
   </div>
 
@@ -21,9 +24,9 @@
 <div class="col-md-12">
   <div class="ingredients col-md-4">
     <h3>Ingredients</h3>
-    <ul>
+    <ul class="list-group">
       <% @recipe.includings.each do |including|  %>
-      <li><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
+      <li class="list-group-item"><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
               #{including.measure_type} #{including.ingredient.name}" %>
       </li>
       <% end %>
@@ -31,7 +34,7 @@
   </div>
 
   <div class="steps col-md-8">
-<h3>Directions</h3>
+<h3 class="direction-header">Directions</h3>
     <ol>
       <% @recipe.steps.each do |step|  %>
           <li><%= step.body %></li>

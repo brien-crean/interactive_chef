@@ -50,29 +50,38 @@ class ScrapeRecipesController < ApplicationController
     @title = doc.at_css(title_selector).text
     @description = doc.at_css(description_selector).text
     # Image
+    # @image = doc.at_css(image_selector)[:src]
     @image = doc.at_css(image_selector)[:src]
     # Ingredient list
     @ingredient_list = doc.css(ingredient_list_selector)
     # Directions
     @directions_list = doc.css(direction_list_selector)
 
-    @recipe             = Recipe.new
-    @recipe.title       = @title
-    @recipe.description = @description
-    @recipe.save
+    @recipe_scrape             = RecipeScrape.new
+    @recipe_scrape.title       = @title
+    @recipe_scrape.description = @description
+    @recipe_scrape.remote_image_url = @image
+    @recipe_scrape.save
 
     @directions_list.each do |direction|
-      @step           = Step.new
-      @step.body      =  direction.text
-      @step.recipe_id = @recipe.id
-      @step.save unless @step.body == ""
+      @step_scrape           =  StepScrape.new
+      @step_scrape.body      =  direction.text
+      @step_scrape.recipe_scrape_id = @recipe_scrape.id
+      @step_scrape.save unless @step_scrape.body == ""
     end
 
-    redirect_to @recipe
+    @ingredient_list.each do |ingredient|
+      @ingredient_scrape                  = IngredientScrape.new
+      @ingredient_scrape.ingredient       =  ingredient.text
+      @ingredient_scrape.recipe_scrape_id = @recipe_scrape.id
+      @ingredient_scrape.save unless @ingredient_scrape.ingredient == "Add all ingredients to list"
+    end
+
+    redirect_to scrape_recipe_path(@recipe_scrape)
   end
 
   def show
-
+    @recipe_scrape = RecipeScrape.find params[:id]
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215012907) do
+ActiveRecord::Schema.define(version: 20151216215916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,11 +39,33 @@ ActiveRecord::Schema.define(version: 20151215012907) do
   add_index "includings", ["ingredient_id"], name: "index_includings_on_ingredient_id", using: :btree
   add_index "includings", ["recipe_id"], name: "index_includings_on_recipe_id", using: :btree
 
+  create_table "ingredient_scrapes", force: :cascade do |t|
+    t.string   "ingredient"
+    t.integer  "recipe_scrape_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "ingredient_scrapes", ["recipe_scrape_id"], name: "index_ingredient_scrapes_on_recipe_scrape_id", using: :btree
+
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "recipe_scrapes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image"
+    t.integer  "cook_time"
+    t.integer  "prep_time"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "recipe_scrapes", ["user_id"], name: "index_recipe_scrapes_on_user_id", using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "title"
@@ -58,6 +80,15 @@ ActiveRecord::Schema.define(version: 20151215012907) do
   end
 
   add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
+
+  create_table "step_scrapes", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "recipe_scrape_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "step_scrapes", ["recipe_scrape_id"], name: "index_step_scrapes_on_recipe_scrape_id", using: :btree
 
   create_table "steps", force: :cascade do |t|
     t.text     "body"
@@ -97,7 +128,10 @@ ActiveRecord::Schema.define(version: 20151215012907) do
   add_foreign_key "comments", "users"
   add_foreign_key "includings", "ingredients"
   add_foreign_key "includings", "recipes"
+  add_foreign_key "ingredient_scrapes", "recipe_scrapes"
+  add_foreign_key "recipe_scrapes", "users"
   add_foreign_key "recipes", "users"
+  add_foreign_key "step_scrapes", "recipe_scrapes"
   add_foreign_key "steps", "recipes"
   add_foreign_key "taggings", "recipes"
   add_foreign_key "taggings", "tags"

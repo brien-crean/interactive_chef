@@ -1,0 +1,25 @@
+<header class="navbar navbar-default nav-bg">
+  <ul class="nav-content list-inline">
+    <li>
+      <%= link_to recipes_path do %>
+        <%= image_tag "knifey_spoony.png" %>
+      <% end  %>
+    </li>
+    <li>
+      <span class="logo">My Audio Cookbook</span>
+    </li>
+    <li> <%= link_to "Recipes", recipes_path %></li>
+
+    <li><%= link_to "Add Recipe", new_recipe_path %></li>
+
+      <% if user_signed_in? %>
+    <li>  <%=link_to "Hello #{current_user.first_name} !"%> </li>
+
+    <li>    <%= link_to "Log Out", sessions_path, method: :delete %></li>
+      <% else %>
+    <li>    <%= link_to "Sign In", new_session_path %></li>
+
+    <li>    <%= link_to "Sign Up", new_user_path %></li>
+      <% end %>
+  </ul>
+</header>

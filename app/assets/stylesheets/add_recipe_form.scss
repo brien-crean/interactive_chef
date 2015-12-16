@@ -1,0 +1,23 @@
+.form-top {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.form-child-element{
+  margin: auto;
+}
+
+.remove_fields {
+  margin-top: 30px;
+  display: block;
+}
+
+.add_fields {
+  margin-left: 10px;
+  display: block;
+}
+
+.create-btn {
+  margin-left: 30px;
+}

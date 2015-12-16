@@ -1,15 +1,19 @@
-<div class="col-md-12 form-group">
+<div class="col-md-12">
+<div class="col-md-12">
 
   <%= simple_form_for @recipe do |f|%>
     <div class="col-md-6">
       <%= f.input :title %>
       <%= f.input :description %>
-      <div class="form-inline">
-        <%= f.input :cook_time %>
-        <%= f.input :prep_time %>
-      </div>
+      <!-- <div class="form-inline"> -->
+      <!-- </div> -->
+      <%= f.input :image %>
     </div>
-    <%= f.input :image %>
+    <div class="col-md-6">
+    <%= f.input :cook_time %>
+    <%= f.input :prep_time %>
+  </div>
+  </div>
   <hr />
   <div class="col-md-12">
     <div class="col-md-6">
@@ -42,10 +46,10 @@
       </div>
     </div>
 
-    <%= f.collection_check_boxes :tag_ids, Tag.order(:name), :id, :name %>
+    <%#= f.collection_check_boxes :tag_ids, Tag.order(:name), :id, :name %>
 
     <div class="col-md-12 row">
-  <%= f.submit %>
+  <%= f.submit class: "btn create-btn" %>
   </div>
   <% end %>
 </div>

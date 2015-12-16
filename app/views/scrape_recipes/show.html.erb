@@ -1,0 +1,33 @@
+<div class="picture-description">
+  <div class="container">
+    <div class="col-md-4">
+      <% if @recipe_scrape.image.present? %>
+        <%= image_tag @recipe_scrape.image.url(:medium), class: "grow" %>
+      <% end %>
+    </div>
+    <div class="title-description">
+      <h1><%= @recipe_scrape.title %></h1>
+      <p id="description"><%= @recipe_scrape.description %></p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-4">
+    <h3>Ingredients</h3>
+    <ul>
+      <% @recipe_scrape.ingredient_scrapes.each do |ingredient_scrape|  %>
+        <li><%=ingredient_scrape.ingredient %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-8">
+      <h3>Directions</h3>
+    <ol>
+      <% @recipe_scrape.step_scrapes.each do |step_scrape|  %>
+          <li><%= step_scrape.body %></li>
+      <% end %>
+    </ol>
+  </div>
+</div>

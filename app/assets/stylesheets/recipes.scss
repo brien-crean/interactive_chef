@@ -66,12 +66,12 @@ body{
   transform: scale(1.1);
 }
 
-#recipe_image {
-  width: 200px;
-  height: 200px;
-  padding: 10px;
-  background: asset-url(camera_icon_small1);
-}
+// #recipe_image {
+//   width: 200px;
+//   height: 200px;
+//   padding: 10px;
+//   background: asset-url(camera_icon_small1);
+// }
 
 .steps, li  {
   font-family: 'Open Sans', sans-serif;
@@ -90,4 +90,8 @@ h1 {
 .main-headings {
   font-family: 'Open Sans', sans-serif;
   color: #474340;
+}
+
+.direction-header {
+  padding-left: 10px;
 }
