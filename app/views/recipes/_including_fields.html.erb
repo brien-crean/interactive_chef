@@ -5,8 +5,18 @@
   <div class="col-md-2">
     <%= f.input :measure_type, label: "Measure" %>
   </div>
-    <div class="col-md-4">
-    <%= f.association :ingredient %>
+    <div class="col-md-4 select-beast">
+    <%= f.association :ingredient, class: "select-beast" %>
+    <%#= f.select :ingredient, options_from_collection_for_select(Ingredient.all, :id, :name),
+        {prompt: "Select an ingredient..."}, {class: "form-control"} %>
   </div>
   <%= link_to_remove_association fa_icon("minus-square", text: "Remove Ingredient"), f %>
 </div>
+
+
+<script type="text/javascript">
+  $('.select-beast').selectize({
+    create: true
+    sortField: 'text'
+  });
+</script>

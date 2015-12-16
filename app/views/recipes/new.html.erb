@@ -3,3 +3,15 @@
   <%= link_to "Add External Recipe", new_scrape_recipe_path, class: "pull-right" %>
   <%= render "form" %>
 </div>
+
+<div class="container">
+  <%= form_tag scrape_recipes_path do %>
+   <b>OR Copy and paste a URL from AllRecipes.com to save to your recipes</b>
+  <div>
+    <%= label_tag :URL %>
+    <%= text_field_tag :URL, "", class: "form-control" %>
+  </div>
+    <%= submit_tag "Add Recipe", class: "" %>
+  </div>
+  <% end %>
+</div>

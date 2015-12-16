@@ -1,7 +1,7 @@
 
 <div class="container">
-  <h4 class="main-headings">Recently Added</h4>
-  <ul class="grid overlay">
+  <ul class="grid overlay splash-bg">
+    <h4 class="main-headings splash">My Recipes</h4>
       <% @recipes.each do |recipe| %>
       <li>
         <% if recipe.image.present? %>
@@ -10,6 +10,7 @@
             <%= image_tag recipe.image %>
             <figcaption>
             <h4> <%= recipe.title %> </h4>
+          <%= truncate(recipe.description, length: 20, separator: ' ') %>
             <!-- <span><%= recipe.description %></span> -->
             <!-- <h4>Rating: ****</h4> -->
             </figcaption>
@@ -21,5 +22,4 @@
       <% end  %>
     </li>
   </ul>
-  <!-- <input id="button" type="button" name="name" value="Text to Speech Test"> -->
 </div>

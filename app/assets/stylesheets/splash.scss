@@ -1,13 +1,23 @@
+.splash-bg {
+	background-color: #F6F6F6;
+}
 .grid {
 	padding: 20px 20px 100px 20px;
-	max-width: 100%;
+	max-width: 92%;
 	margin: 0 auto;
+	margin-top: 30px;
 	list-style: none;
 	// text-align: center;
 }
+
+.splash {
+	padding-left: 20px;
+	font-family: 'Open Sans'
+}
+
 .grid li {
 	display: inline-block;
-	width: 300px;
+	width: 250px;
 	margin: 0;
 	padding: 20px;
 	text-align: left;
@@ -17,14 +27,15 @@
 .grid figure {
 	margin: 0;
 	position: relative;
+	box-shadow: -9px 0px 8px 1px #aaaaaa;
 }
 
 .grid figure img {
 	max-width: 100%;
 	display: block;
 	position: relative;
-	box-shadow: -9px 0px 8px 1px #aaaaaa;
 }
+
 
 .grid figcaption {
 	position: absolute;
@@ -52,7 +63,7 @@
 
 .overlay figure:hover img,
 .overlay figure.cs-hover img {
-	transform: translateY(-25px);
+	// transform: translateY(-25px);
 }
 
 .overlay figcaption {
@@ -67,7 +78,7 @@
 
 .overlay figure:hover figcaption,
 .overlay figure.cs-hover figcaption {
-	opacity: 1;
+	opacity: 0.75;
 	transform: translateY(0px);
 	transition: transform 0.4s, opacity 0.1s;
 }

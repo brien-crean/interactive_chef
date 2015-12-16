@@ -15,6 +15,7 @@ gem 'bootstrap-sass'
 gem 'cocoon'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rails-reveal-js', :git => 'https://github.com/negativetwelve/rails-reveal-js.git'
+gem "selectize-rails"
 
 gem 'font-awesome-rails'
 gem 'carrierwave'

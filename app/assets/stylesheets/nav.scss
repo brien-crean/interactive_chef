@@ -1,0 +1,46 @@
+.logo {
+  padding-right: 20px;
+  font-family: 'Open Sans';
+  font-size: 35px;
+}
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-content .list-inline li + li:before {
+  content: '|'; display: inline-block;
+}
+
+.nav-bg {
+  background-color: #0099cc;
+  color: white;
+  // height: 120px;
+  // padding-top: 5px;
+  // padding-left: 20px;
+  // padding-right: 120px;
+  // font-size: 30px;
+  // text-align: center;
+}
+.nav-content {
+  text-decoration: none;
+  height: 100%;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+nav a{
+  text-decoration: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+.content-adjust {
+  // vertical-align: bottom;
+  // position: static;
+height: inherit;
+vertical-align: text-bottom;
+}

@@ -13,5 +13,7 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require selectize
+ *= require selectize.default
  *= stub reveal_presenter
  */
