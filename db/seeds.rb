@@ -132,19 +132,19 @@ cook_time: 30, prep_time: 5, user_id: 1)
 
 recipe1.image = Rails.root.join("app/assets/images/lasagna_carousel.png").open
 recipe1.save!
-recipe2.image = Rails.root.join("app/assets/images/hummus_carousel.png").open
+recipe2.image = Rails.root.join("app/assets/images/hummus2.jpg").open
 recipe2.save!
-recipe3.image = Rails.root.join("app/assets/images/italian_chicken_bake_carousel.png").open
+recipe3.image = Rails.root.join("app/assets/images/Italian_chicken_bake.jpg").open
 recipe3.save!
-recipe4.image = Rails.root.join("app/assets/images/corn_soup_carousel.png").open
+recipe4.image = Rails.root.join("app/assets/images/corn_soup.jpg").open
 recipe4.save!
-recipe5.image = Rails.root.join("app/assets/images/lasagna_carousel.png").open
+recipe5.image = Rails.root.join("app/assets/images/chicken_fajitas.jpg").open
 recipe5.save!
-recipe6.image = Rails.root.join("app/assets/images/hummus_carousel.png").open
+recipe6.image = Rails.root.join("app/assets/images/butternut-ravioli1.jpg").open
 recipe6.save!
-recipe7.image = Rails.root.join("app/assets/images/italian_chicken_bake_carousel.png").open
+recipe7.image = Rails.root.join("app/assets/images/cajun_chicken_pasta_bake.jpg").open
 recipe7.save!
-recipe8.image = Rails.root.join("app/assets/images/corn_soup_carousel.png").open
+recipe8.image = Rails.root.join("app/assets/images/roasted_cauliflower.jpg").open
 recipe8.save!
 
 Step.create!(body: "In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 tablespoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.", recipe_id: 1)
