@@ -104,6 +104,11 @@ i87  = Ingredient.create!(name: "Large Lemon, zested & juiced");
 i88  = Ingredient.create!(name: "Ground Sumac");
 i89  = Ingredient.create!(name: "Garlic Powder");
 
+i90  = Ingredient.create!(name: "Wholemeal Flour");
+i91  = Ingredient.create!(name: "White Flour");
+i92  = Ingredient.create!(name: "Baking Soda");
+i93  = Ingredient.create!(name: "Buttermilk");
+i94  = Ingredient.create!(name: "Honey");
 
 recipe1 = Recipe.create!(title: "Lasagna", description: "This is a Classic Lasagna recipe filled with layers of homemade tomato meat sauce,
 creamy ricotta, al dente noodles, and topped with mozzarella and Parmesan.",
@@ -130,6 +135,9 @@ cook_time: 50, prep_time: 10, user_id: 1)
 recipe8 = Recipe.create!(title: "Lemon Roasted Cauliflower With Cumin & Sumac", description: "This roasted cauliflower side-dish is crispy, salty, lemony, earthy, tangy and out of this world! The sumac and lemon work together to brighten the the tartness while the cumin adds an earthy simmer.",
 cook_time: 30, prep_time: 5, user_id: 1)
 
+recipe9 = Recipe.create!(title: "Traditional Brown Soda Bread", description: "This is a delicious, easy and very healthy bread.",
+cook_time: 45, prep_time: 15, user_id: 1)
+
 recipe1.image = Rails.root.join("app/assets/images/lasagna_splash.png").open
 recipe1.save!
 recipe2.image = Rails.root.join("app/assets/images/hummus2.jpg").open
@@ -146,6 +154,8 @@ recipe7.image = Rails.root.join("app/assets/images/cajun_chicken_pasta_bake.jpg"
 recipe7.save!
 recipe8.image = Rails.root.join("app/assets/images/roasted_cauliflower.jpg").open
 recipe8.save!
+recipe9.image = Rails.root.join("app/assets/images/irish-soda-bread.jpg").open
+recipe9.save!
 
 Step.create!(body: "In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 tablespoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.", recipe_id: 1)
 
@@ -222,6 +232,10 @@ Step.create!(body: "Using the same pan. Melt butter in a saucepan over medium he
 Step.create!(body: "Add pasta to chicken mixture; toss gently to mix well. Spoon into baking dish. Sprinkle with cheese. Bake uncovered about 20-30 minutes or until cheese is melted and warm in the center.", recipe_id: 7)
 
 Step.create!(body: "Preheat oven to 425°F.", recipe_id: 8)
+
+Step.create!(body: "Preheat the oven to Gas Mark 6, 200°C (400°F)..", recipe_id: 9)
+Step.create!(body: "Mix the flour, bread soda and salt together in a bowl.  Combine the egg with the buttermilk and honey then mix into the flour.  Add a little more buttermilk if the mixture is dry – it should be a soft dough.  Then pour the lot into a lightly oiled loaf tin.  Sprinkle the sesame seeds or porridge oats over the top of the loaf if using.", recipe_id: 9)
+Step.create!(body: "Bake for 45-50 minutes.  To know when it is cooked simply tap the bottom of the loaf – it will sound hollow when it is fully cooked. Remove from the tin and wrap in a clean tea towel while cooling.  This will keep the crust soft.", recipe_id: 9)
 
 Including.create!(amount: 1, measure_type: "pound", ingredient_id: i7.id, recipe_id: recipe1.id )
 Including.create!(amount: 0.75, measure_type: "pound", ingredient_id: i34.id, recipe_id: recipe1.id )
@@ -322,6 +336,14 @@ Including.create!(amount: 1, measure_type: "tbsp", ingredient_id: i88.id, recipe
 Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i89.id, recipe_id: recipe8.id )
 Including.create!(amount: 1, measure_type: "pinch", ingredient_id: i48.id, recipe_id: recipe8.id )
 Including.create!(amount: 1, measure_type: "dash", ingredient_id: i45.id, recipe_id: recipe8.id )
+
+Including.create!(amount: 250, measure_type: "g", ingredient_id: i90.id, recipe_id: recipe9.id )
+Including.create!(amount: 200, measure_type: "g", ingredient_id: i91.id, recipe_id: recipe9.id )
+Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i92.id, recipe_id: recipe9.id )
+Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i28.id, recipe_id: recipe9.id )
+Including.create!(amount: 1, measure_type: "qty", ingredient_id: i16.id, recipe_id: recipe9.id )
+Including.create!(amount: 350, measure_type: "ml", ingredient_id: i93.id, recipe_id: recipe9.id )
+Including.create!(amount: 1, measure_type: "tsp", ingredient_id: i94.id, recipe_id: recipe9.id )
 
 Tag.create!(name: "Italian")
 Tag.create!(name: "Persian")

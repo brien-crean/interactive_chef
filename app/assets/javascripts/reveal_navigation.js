@@ -34,6 +34,14 @@ $(document).on('ready', function(){
           speak("This feature is only available when viewing a recipe");
         }
       },
+      'Audio Mode': function() {
+        var recipe = $("#recipe").data("id");
+        if (recipe){
+          window.location.href = '/presentations/' + recipe;
+        }else{
+          speak("This feature is only available when viewing a recipe");
+        }
+      },
       'End': function() {
         var recipe = $("#recipe").data("id");
         if (recipe){

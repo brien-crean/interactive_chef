@@ -2,7 +2,13 @@ img { max-width: 100%; }
 body{
   background-color: #white;
 }
+.show-pic {
+  padding-left: 25px;
+}
 
+.title-description {
+  padding-left: 35px;
+}
 // @font-face {
 //   font-family: 'NotoSansGurmukhi';
 //   src:url('NotoSansGurmukhi.ttf');
@@ -49,17 +55,17 @@ body{
 }
 
 .blue-button{
-  background-color: #F8F9F2;
-  color: #247BA0;
+  background-color: #F7D08A;
+  color: #white;
   padding: 8px 37px;
-  border: 2px solid #247BA0;
+  border: 2px solid #F7D08A;
   font-weight: bold;
   border-radius: 3px;
 }
 
 .grow {
   transition: all .2s ease-in-out;
-  box-shadow: -9px 0px 8px 1px #aaaaaa;
+  box-shadow: 9px 0px 8px 1px #aaaaaa;
 }
 
 .grow:hover {
@@ -100,4 +106,30 @@ h1 {
 .custom-header {
   font-family: 'Bree Serif', serif;
   font-size: 20px;
+}
+
+.comment-box {
+  padding-left: 445px;
+}
+
+.edit-delete {
+  padding-left: 40px;
+  padding-top: 50px;
+}
+
+.comment-header {
+  padding: 0px;
+  margin: 0px;
+  font-size: 12px;
+}
+
+.comment-divider {
+  padding: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-top: 1px solid #ccc
+}
+
+.edit-delete {
+  padding-bottom: 120px;
 }
