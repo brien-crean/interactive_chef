@@ -9,8 +9,10 @@
             <%= link_to recipe_path(recipe) do %>
             <%= image_tag recipe.image %>
             <figcaption>
-            <h4> <%= recipe.title %> </h4>
-          <%= truncate(recipe.description, length: 20, separator: ' ') %>
+            <span class="overlay-header"> <%= recipe.title %> </span>
+            <span class="overlay-text">
+              <%= truncate(recipe.description, length: 40, separator: ' ') %>
+            </span>
             <!-- <span><%= recipe.description %></span> -->
             <!-- <h4>Rating: ****</h4> -->
             </figcaption>

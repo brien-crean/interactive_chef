@@ -130,7 +130,7 @@ cook_time: 50, prep_time: 10, user_id: 1)
 recipe8 = Recipe.create!(title: "Lemon Roasted Cauliflower With Cumin & Sumac", description: "This roasted cauliflower side-dish is crispy, salty, lemony, earthy, tangy and out of this world! The sumac and lemon work together to brighten the the tartness while the cumin adds an earthy simmer.",
 cook_time: 30, prep_time: 5, user_id: 1)
 
-recipe1.image = Rails.root.join("app/assets/images/lasagna_carousel.png").open
+recipe1.image = Rails.root.join("app/assets/images/lasagna_splash.png").open
 recipe1.save!
 recipe2.image = Rails.root.join("app/assets/images/hummus2.jpg").open
 recipe2.save!
