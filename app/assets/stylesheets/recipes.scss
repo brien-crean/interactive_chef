@@ -46,21 +46,23 @@ body{
 }
 
 .red-button{
-  background-color: #F8F9F2;
+  background-color: #FF9016;
   color: #FF1654;
   padding: 8px 37px;
-  border: 2px solid #FF1654;
+  border: 2px solid #FF9016;
   font-weight: bold;
   border-radius: 3px;
 }
 
 .blue-button{
-  background-color: #F7D08A;
-  color: #white;
+  background-color: #237DAC;
   padding: 8px 37px;
-  border: 2px solid #F7D08A;
+  border: 2px solid #237DAC;
   font-weight: bold;
   border-radius: 3px;
+}
+a.blue-button{
+  color: #white;
 }
 
 .grow {
@@ -132,4 +134,8 @@ h1 {
 
 .edit-delete {
   padding-bottom: 120px;
+}
+
+.edit-delete a{
+  color: white;
 }

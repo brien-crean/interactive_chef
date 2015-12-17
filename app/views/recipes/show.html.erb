@@ -14,6 +14,8 @@
     <p id="description"><%= @recipe.description %></p>
     <p>Cook Time: <%= @recipe.cook_time %></p>
     <p>Prep Time: <%= @recipe.prep_time %></p>
+  <%= fa_icon "microphone 3x", class: "tips"%>
+  <p></p>
   </div>
 
   </div>
@@ -26,6 +28,9 @@
     <h3>Ingredients</h3>
     <ul class="list-group">
       <% @recipe.includings.each do |including|  %>
+      <!-- <li class="list-group-item"><%#= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
+              #{including.measure_type} #{including.ingredient.name}" %>
+      </li> -->
       <li class="list-group-item"><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
               #{including.measure_type} #{including.ingredient.name}" %>
       </li>
@@ -75,8 +80,8 @@
     <% end %>
   </div>
   <div class="edit-delete">
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn btn-primary" %>
-    <%= link_to "Delete Recipe", recipe_path(@recipe), class: "btn btn-danger", method: :delete %>
+    <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn blue-button" %>
+    <%= link_to "Delete Recipe", recipe_path(@recipe), class: "btn red-button", method: :delete %>
   </div>
 
 </div>
