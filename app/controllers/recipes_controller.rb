@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.order("created_at")
-
+    @recipe_scrapes = RecipeScrape.order("created_at")
     respond_to do |format|
       format.html { render }
       format.json { render json: @recipes.select(:id, :title, :description).to_json }

@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     delete :destroy, on: :collection
   end
 
-  resources :scrape_recipes, only: [:index, :new, :create, :show]
+  resources :scrape_recipes, only: [:index, :new, :create, :show, :destroy]
 
 end

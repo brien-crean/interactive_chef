@@ -22,4 +22,23 @@
       <% end  %>
     </li>
   </ul>
+  <ul class="grid overlay splash-bg">
+    <h4 class="main-headings splash">Recipes from other sites</h4>
+      <% @recipe_scrapes.each do |recipe_scrape| %>
+      <li>
+        <% if recipe_scrape.image.present? %>
+          <figure>
+            <%= link_to scrape_recipe_path(recipe_scrape) do %>
+            <%= image_tag recipe_scrape.image.url(:medium) %>
+            <figcaption>
+            <h4> <%= recipe_scrape.title %> </h4>
+            </figcaption>
+            <% end %>
+          </figure>
+        <% else %>
+          <%= link_to recipe.title, scrape_recipe_path(recipe_scrape) %>
+        <% end  %>
+      <% end  %>
+    </li>
+  </ul>
 </div>

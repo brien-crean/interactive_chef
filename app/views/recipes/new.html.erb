@@ -1,7 +1,4 @@
 <div class="container">
-  <div class="container">
-    <h1>Add Recipe</h1>
-  </div>
   <div class="form-inline">
     <%= form_tag scrape_recipes_path do %>
     <div class="col-md-6">
@@ -10,6 +7,9 @@
       <%= submit_tag "Get Recipe", class: "btn" %>
     </div>
     <% end %>
+  </div>
+  <div class="container">
+    <h1>Add Recipe</h1>
   </div>
 
   <%#= link_to "Add External Recipe", new_scrape_recipe_path, class: "pull-right" %>

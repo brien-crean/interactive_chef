@@ -84,4 +84,11 @@ class ScrapeRecipesController < ApplicationController
     @recipe_scrape = RecipeScrape.find params[:id]
   end
 
+  def destroy
+    @recipe_scrape = RecipeScrape.find params[:id]
+    @recipe_scrape.destroy
+    redirect_to root_path
+  end
+
+
 end
