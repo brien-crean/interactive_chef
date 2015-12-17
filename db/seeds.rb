@@ -134,7 +134,7 @@ recipe1.image = Rails.root.join("app/assets/images/lasagna_carousel.png").open
 recipe1.save!
 recipe2.image = Rails.root.join("app/assets/images/hummus2.jpg").open
 recipe2.save!
-recipe3.image = Rails.root.join("app/assets/images/Italian_chicken_bake.jpg").open
+recipe3.image = Rails.root.join("app/assets/images/italian_chicken_bake.jpg").open
 recipe3.save!
 recipe4.image = Rails.root.join("app/assets/images/corn_soup.jpg").open
 recipe4.save!
