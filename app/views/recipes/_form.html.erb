@@ -1,17 +1,17 @@
 <div class="col-md-12">
 <div class="col-md-12">
-
+<hr>
   <%= simple_form_for @recipe do |f|%>
     <div class="col-md-6">
       <%= f.input :title %>
-      <%= f.input :description %>
+      <%= f.input :description, as: :string %>
       <!-- <div class="form-inline"> -->
       <!-- </div> -->
-      <%= f.input :image %>
     </div>
     <div class="col-md-6">
     <%= f.input :cook_time %>
     <%= f.input :prep_time %>
+    <%= f.input :image %>
   </div>
   </div>
   <hr />
@@ -48,7 +48,7 @@
 
     <%#= f.collection_check_boxes :tag_ids, Tag.order(:name), :id, :name %>
 
-    <div class="col-md-12 row">
+    <div class="col-md-12 row create-btn">
   <%= f.submit class: "btn create-btn" %>
   </div>
   <% end %>

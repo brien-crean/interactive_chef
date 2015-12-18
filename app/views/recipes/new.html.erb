@@ -1,16 +1,16 @@
 <div class="container">
-  <div class="form-inline">
+  <h1 class="new-recipe">Add a Recipe</h1>
+  <hr class="filler">
+  <div id="external" class="external form-inline col-md-12">
     <%= form_tag scrape_recipes_path do %>
-    <div class="col-md-6">
-      <%= label_tag "External Recipe URL" %>
-      <%= text_field_tag :URL, "", class: "form-control" %>
+      <%= label_tag "Recipe URL(e.g. AllRecipes.com)" %>
+      <%= text_field_tag :URL, "", class: "external form-control" %>
       <%= submit_tag "Get Recipe", class: "btn" %>
-    </div>
     <% end %>
   </div>
-  <div class="container">
-    <h1>Add Recipe</h1>
-  </div>
+<div class="">
+
+</div>
 
   <%#= link_to "Add External Recipe", new_scrape_recipe_path, class: "pull-right" %>
   <%= render "form" %>
