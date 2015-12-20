@@ -215,7 +215,9 @@ Step.create!(body: "Spoon small amount of chicken and veggies onto each tortilla
 
 Step.create!(body: "Preheat oven to 400°F.", recipe_id: 6)
 
-Step.create!(body: "Place squash halves, cut sides down, on a foil-lined baking sheet coated with cooking spray. Bake at 400° for 30 minutes or until tender. Cool. Scoop out pulp; discard peel. Mash pulp. Combine oregano, squash pulp, and butter in a large bowl. Stir in 2 ounces (about 1/2 cup) cheese, 1/4 teaspoon salt, and 1/4 teaspoon pepper. Working with 1 wonton wrapper at a time (cover remaining wrappers with a damp towel to keep them from drying), spoon about 1 1/2 teaspoons squash mixture into center of each wrapper. Moisten edges of wrapper with beaten egg; bring 2 opposite corners together. Pinch edges together to seal, forming a triangle. Repeat procedure with remaining wrappers, squash mixture, and egg. Cover ravioli loosely with a towel to prevent drying.", recipe_id: 6)
+Step.create!(body: "Place squash halves, cut sides down, on a foil-lined baking sheet coated with cooking spray. Bake at 400° for 30 minutes or until tender. Cool. Scoop out pulp; discard peel. Mash pulp. Combine oregano, squash pulp, and butter in a large bowl. Stir in 2 ounces (about 1/2 cup) cheese, 1/4 teaspoon salt, and 1/4 teaspoon pepper. ", recipe_id: 6)
+
+Step.create!(body: "Working with 1 wonton wrapper at a time (cover remaining wrappers with a damp towel to keep them from drying), spoon about 1 1/2 teaspoons squash mixture into center of each wrapper. Moisten edges of wrapper with beaten egg; bring 2 opposite corners together. Pinch edges together to seal, forming a triangle. Repeat procedure with remaining wrappers, squash mixture, and egg. Cover ravioli loosely with a towel to prevent drying.", recipe_id: 6)
 
 Step.create!(body: "Place garlic in a food processor, and pulse until finely chopped. Add remaining 1/2 ounce (about 2 tablespoons) cheese, remaining 1/8 teaspoon salt, remaining 1/4 teaspoon pepper, spinach, basil, and 2 tablespoons walnuts. With processor on, slowly pour oil, broth, and juice through food chute. Process until well blended. Place pesto in a large bowl.", recipe_id: 6)
 
@@ -223,7 +225,7 @@ Step.create!(body: "Bring 6 quarts water to a boil in a large Dutch oven. Add ha
 
 Step.create!(body: "Heat oven to 350°F. Lightly spray baking dish with cooking spray.", recipe_id: 7)
 
-Step.create!(body: "TCook pasta as directed on the packaging and drain.", recipe_id: 7)
+Step.create!(body: "Cook pasta as directed on the packaging and drain.", recipe_id: 7)
 
 Step.create!(body: "In a large sauce pan heat 3 tablespoons of olive oil, add sliced onion, garlic, sliced red, green and yellow peppers and sauté until they are slightly tender. Remove from pan and set aside.", recipe_id: 7)
 
@@ -303,7 +305,7 @@ Including.create!(amount: 1, measure_type: "qty", ingredient_id: i66.id, recipe_
 Including.create!(amount: 1, measure_type: "tbsp", ingredient_id: i67.id, recipe_id: recipe6.id )
 Including.create!(amount: 2, measure_type: "tbsp", ingredient_id: i68.id, recipe_id: recipe6.id )
 Including.create!(amount: 2.5, measure_type: "ounce", ingredient_id: i18.id, recipe_id: recipe6.id )
-Including.create!(amount: 0.375, measure_type: "tsp", ingredient_id: i28.id, recipe_id: recipe6.id )
+Including.create!(amount: 0.25, measure_type: "tsp", ingredient_id: i28.id, recipe_id: recipe6.id )
 Including.create!(amount: 0.5, measure_type: "tsp", ingredient_id: i45.id, recipe_id: recipe6.id )
 Including.create!(amount: 36, measure_type: "qty", ingredient_id: i69.id, recipe_id: recipe6.id )
 Including.create!(amount: 1, measure_type: "qty", ingredient_id: i70.id, recipe_id: recipe6.id )
