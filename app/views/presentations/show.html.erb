@@ -16,7 +16,7 @@
       <h3>Ingredients</h3>
       <ul>
         <% @recipe.includings.each do |including|  %>
-        <li class="list-group-item"><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
+        <li><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
                 #{including.measure_type} #{including.ingredient.name}" %>
         </li>
 
@@ -36,6 +36,35 @@
     <% end %>
   </div>
 </div>
+
+  <!-- Help Modal -->
+  <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="helpModalLabel">Audio Navigation Help</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Voice Commands</h4>
+          <ul>
+            <li>"Next/Right" to move to the next slide.</li>
+            <li>"Back/Left" to move to the previous slide.</li>
+            <li>"Ingredients" to move to the list of Ingredients slide.</li>
+            <li>"Step + Number" to move to specific step, e.g. "Step 1"</li>
+            <li>"Resume" to move back to the last step</li>
+            <li>"End" to quit Audio mode.</li>
+            <li>"Help" to toggle Audio mode help.</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 <script>
   Reveal.initialize({
     slideNumber: 'c/t',

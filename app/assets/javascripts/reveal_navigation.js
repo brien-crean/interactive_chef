@@ -6,6 +6,9 @@ $(document).on('ready', function(){
         Reveal.right();
         state = Reveal.getState();
       },
+      'Help': function() {
+        $('#helpModal').modal('toggle');
+      },
       'Back': function() {
         Reveal.left();
         state = Reveal.getState();
