@@ -13,13 +13,12 @@
       <p id="description"><%= @recipe.description %></p>
     </section>
     <section id="ingredients">
-      <h3>Ingredients</h3>
+      <h5>Ingredients</h5>
       <ul>
         <% @recipe.includings.each do |including|  %>
-        <li><%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : Rational(including.amount)}
-                #{including.measure_type} #{including.ingredient.name}" %>
+        <li class="ingredient-list">  <%= "#{including.amount % 1 == 0.0 ? including.amount.to_i : including.amount}
+                #{including.measure_type unless including.measure_type == "qty"} #{including.ingredient.name}" %>
         </li>
-
         <% end %>
       </ul>
     </section>

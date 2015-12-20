@@ -233,6 +233,10 @@ Step.create!(body: "Add pasta to chicken mixture; toss gently to mix well. Spoon
 
 Step.create!(body: "Preheat oven to 425°F.", recipe_id: 8)
 
+Step.create!(body: "In a large bowl, combine the cauliflower, olive oil, lemon juice and zest, cumin, sumac and garlic powder. Toss with your hands or a wooden spoon so that everything gets evenly combined. Dump onto a cookie sheet prepped with a silpat mat or parchment paper and sprinkle with salt and pepper. Bake for 30 minutes, flipping cauliflower over at the 15 minute mark. When everything is golden brown and crispy, remove from oven.", recipe_id: 8)
+
+Step.create!(body: "Serve with additional lemon quarters for that added lemony bite.", recipe_id: 8)
+
 Step.create!(body: "Preheat the oven to Gas Mark 6, 200°C (400°F)..", recipe_id: 9)
 Step.create!(body: "Mix the flour, bread soda and salt together in a bowl.  Combine the egg with the buttermilk and honey then mix into the flour.  Add a little more buttermilk if the mixture is dry – it should be a soft dough.  Then pour the lot into a lightly oiled loaf tin.  Sprinkle the sesame seeds or porridge oats over the top of the loaf if using.", recipe_id: 9)
 Step.create!(body: "Bake for 45-50 minutes.  To know when it is cooked simply tap the bottom of the loaf – it will sound hollow when it is fully cooked. Remove from the tin and wrap in a clean tea towel while cooling.  This will keep the crust soft.", recipe_id: 9)
