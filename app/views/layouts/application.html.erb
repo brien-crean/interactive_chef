@@ -11,7 +11,10 @@
     <%= render "/layouts/nav" %>
 
     <%= yield %>
+
+<div class="container">
     <%= flash[:alert] %>
+  </div>
 
   </body>
 </html>
