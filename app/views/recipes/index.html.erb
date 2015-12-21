@@ -1,7 +1,12 @@
 
 <div class="container">
   <ul class="grid overlay splash-bg">
-    <h4 class="main-headings splash">My Recipes</h4>
+    <p>
+      Welcome to Interactive Chef! Browse our collection below and sign up to start saving your own digital recipes!
+      If you don't want to cover your expensive laptop in your recipes' ingredients you can use our audio mode to
+      follow a recipe using speech recognition.
+    </p>
+    <h4 class="main-headings splash">All Recipes</h4>
       <% @recipes.each do |recipe| %>
       <li>
         <% if recipe.image.present? %>
@@ -23,6 +28,8 @@
         <% end  %>
       <% end  %>
     </li>
+    <b> Note:</b> This site is best viewed with Chrome as Google Chrome supports Speech Recognition by default.
+    Other browsers require plugins or extra configuration for support.
   </ul>
   <ul class="grid overlay splash-bg">
     <h4 class="main-headings splash">Recipes from other sites</h4>

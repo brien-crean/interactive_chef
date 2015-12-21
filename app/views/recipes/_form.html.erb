@@ -1,18 +1,16 @@
 <div class="col-md-12">
-<div class="col-md-12">
-<hr>
-  <%= simple_form_for @recipe do |f|%>
-    <div class="col-md-6">
-      <%= f.input :title %>
-      <%= f.input :description, as: :string %>
-      <!-- <div class="form-inline"> -->
-      <!-- </div> -->
-    </div>
-    <div class="col-md-6">
-    <%= f.input :cook_time %>
-    <%= f.input :prep_time %>
-    <%= f.input :image %>
-  </div>
+  <div class="col-md-12">
+    <hr>
+    <%= simple_form_for @recipe do |f|%>
+      <div class="col-md-6">
+        <%= f.input :title %>
+        <%= f.input :description, as: :string %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :cook_time %>
+        <%= f.input :prep_time %>
+        <%= f.input :image %>
+      </div>
   </div>
   <hr />
   <div class="col-md-12">
@@ -26,30 +24,30 @@
 
 
 
-    <div class="col-md-6 form-group">
-        <%= f.error :steps %>
-        <%= f.simple_fields_for :steps do |r| %>
-          <%= render "step_fields", f: r %>
-        <% end  %>
-        <div class="links">
-          <%= link_to_add_association fa_icon("plus-square", text: "Add Step"), f, :steps %>
-        </div>
+  <div class="col-md-6 form-group">
+    <%= f.error :steps %>
+    <%= f.simple_fields_for :steps do |r| %>
+      <%= render "step_fields", f: r %>
+    <% end  %>
+    <div class="links">
+      <%= link_to_add_association fa_icon("plus-square", text: "Add Step"), f, :steps %>
     </div>
+  </div>
 
 
-    <div class="col-md-6 form-group">
-      <%= f.simple_fields_for :includings do |r| %>
-          <%= render "including_fields", f: r %>
-        <% end  %>
-      <div class="links">
-        <%= link_to_add_association fa_icon("plus-square", text: "Add Ingredient"), f, :includings %>
-      </div>
+  <div class="col-md-6 form-group">
+    <%= f.simple_fields_for :includings do |r| %>
+        <%= render "including_fields", f: r %>
+      <% end  %>
+    <div class="links">
+      <%= link_to_add_association fa_icon("plus-square", text: "Add Ingredient"), f, :includings %>
     </div>
+  </div>
 
     <%#= f.collection_check_boxes :tag_ids, Tag.order(:name), :id, :name %>
 
     <div class="col-md-12 row create-btn">
-  <%= f.submit class: "btn create-btn" %>
-  </div>
+      <%= f.submit class: "btn create-btn" %>
+    </div>
   <% end %>
 </div>

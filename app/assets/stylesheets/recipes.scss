@@ -1,7 +1,11 @@
-img { max-width: 100%; }
-body{
+img {
+  max-width: 100%;
+}
+
+body {
   background-color: #white;
 }
+
 .show-pic {
   padding-left: 25px;
 }
@@ -9,14 +13,8 @@ body{
 .title-description {
   padding-left: 35px;
 }
-// @font-face {
-//   font-family: 'NotoSansGurmukhi';
-//   src:url('NotoSansGurmukhi.ttf');
-//   font-weight: normal;
-//   font-style: normal;
-// }
 
-.picture-description{
+.picture-description {
   background-color: #F6F6F6;
   border-bottom: 1px solid #D4D5D6;
   padding-top: 20px;
@@ -24,7 +22,7 @@ body{
 
 }
 
-.orange{
+.orange {
   background-color: #756D66;
   border-radius: 50%;
   color: white;
@@ -34,7 +32,8 @@ body{
   width: 50px;
   height: 50px;
 }
-.green{
+
+.green {
   background-color: #8E9946;
   border-radius: 50%;
   color: white;
@@ -45,7 +44,7 @@ body{
   height: 50px;
 }
 
-.red-button{
+.red-button {
   background-color: #FF9016;
   color: #FF1654;
   padding: 8px 37px;
@@ -54,14 +53,14 @@ body{
   border-radius: 3px;
 }
 
-.blue-button{
+.blue-button {
   background-color: #237DAC;
   padding: 8px 37px;
   border: 2px solid #237DAC;
   font-weight: bold;
   border-radius: 3px;
 }
-a.blue-button{
+a.blue-button {
   color: #white;
 }
 
@@ -74,27 +73,23 @@ a.blue-button{
   transform: scale(1.1);
 }
 
-// #recipe_image {
-//   width: 200px;
-//   height: 200px;
-//   padding: 10px;
-//   background: asset-url(camera_icon_small1);
-// }
-
 .steps, li  {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 
 }
+
 p {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: #474340;
 }
+
 h1 {
   font-family: 'Open Sans', sans-serif;
   color: #474340;
 }
+
 .main-headings {
   font-family: 'Bree Serif', serif;
   font-size: 30px;
@@ -136,10 +131,10 @@ h1 {
   padding-bottom: 120px;
 }
 
-.edit-delete a{
+.edit-delete a {
   color: white;
 }
-.edit-delete2 a{
+.edit-delete2 a {
   color: white;
   margin-left: 550px;
   margin-bottom: 50px;
@@ -158,4 +153,8 @@ h1 {
 
 .external-form {
   margin-bottom: 50px;
+}
+
+.step {
+  padding-left: 30px;
 }

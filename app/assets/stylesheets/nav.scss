@@ -17,12 +17,6 @@
 .nav-bg {
   background-color: #237DAC;
   color: white;
-  // height: 120px;
-  // padding-top: 5px;
-  // padding-left: 20px;
-  // padding-right: 120px;
-  // font-size: 30px;
-  // text-align: center;
 }
 .nav-content {
   text-decoration: none;
@@ -43,10 +37,8 @@ nav a{
 }
 
 .content-adjust {
-  // vertical-align: bottom;
-  // position: static;
-height: inherit;
-vertical-align: text-bottom;
+  height: inherit;
+  vertical-align: text-bottom;
 }
 
 .left-nav {

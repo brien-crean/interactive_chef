@@ -6,19 +6,19 @@
     <span class="logo">Interactive Chef</span>
   </div>
   <ul class="nav-content list-inline left-nav">
-  <li> <%= link_to "Recipes", recipes_path %></li>
-  |
-  <li><%= link_to "Add Recipe", new_recipe_path %></li>
+    <li> <%= link_to "Recipes", recipes_path %></li>
+    |
+    <li><%= link_to "Add Recipe", new_recipe_path %></li>
   </ul>
   <ul class="nav-content list-inline">
     <% if user_signed_in? %>
-  <li>  <%=link_to "Hello #{current_user.first_name}"%> </li>
-  |
-  <li>    <%= link_to "Log Out", sessions_path, method: :delete %></li>
-    <% else %>
-  <li>    <%= link_to "Sign In", new_session_path %></li>
-  |
-  <li>    <%= link_to "Sign Up", new_user_path %></li>
+      <li>  <%=link_to "Hello #{current_user.first_name}"%> </li>
+      |
+      <li>    <%= link_to "Log Out", sessions_path, method: :delete %></li>
+        <% else %>
+      <li>    <%= link_to "Sign In", new_session_path %></li>
+      |
+      <li>    <%= link_to "Sign Up", new_user_path %></li>
     <% end %>
   </ul>
 </nav>
