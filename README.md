@@ -5,7 +5,7 @@
 
 # Demo
 
-  - https://my-recipebook-brien.herokuapp.com/recipes
+  - https://interactive-chef.herokuapp.com/recipes  
 
 ## Tech used in this app
   - Ruby on Rails 4.2.4
