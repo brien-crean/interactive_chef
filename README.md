@@ -3,6 +3,10 @@
   - Navigating through recipe ingredients and steps is made possible using voice commands.
   - If you have ever followed a recipe online you know that from time to time you have to avoid touching your expensive device with dirty hands!
 
+# Demo
+
+  - https://my-recipebook-brien.herokuapp.com/recipes
+
 ## Tech used in this app
   - Ruby on Rails 4.2.4
   - Ruby version 2.2.1
