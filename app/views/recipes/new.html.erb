@@ -6,18 +6,15 @@
       favourite recipe from <a href="http://allrecipes.com"> All Recipes</a>
     </p>
   </div>
-
-  <%#= link_to "Add External Recipe", new_scrape_recipe_path, class: "pull-right" %>
   <%= render "form" %>
   <div class="">
-
-  <div class="external-form form-group col-md-8">
-    <hr class="filler">
-    <h1 class="main-headings">Add an External Recipe URL (e.g. AllRecipes.com)</h1>
-    <%= form_tag scrape_recipes_path do %>
-    <%= text_field_tag :URL, "", class: "form-control external-url" %>
-    <%= submit_tag "Get Recipe", class: "btn" %>
-    <% end %>
+    <div class="external-form form-group col-md-8">
+      <hr class="filler">
+      <h1 class="main-headings">Add an External Recipe URL (e.g. AllRecipes.com)</h1>
+      <%= form_tag scrape_recipes_path do %>
+      <%= text_field_tag :URL, "", class: "form-control external-url" %>
+      <%= submit_tag "Get Recipe", class: "btn" %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>
