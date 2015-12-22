@@ -15,7 +15,7 @@
     <p>Cook Time: <%= @recipe.cook_time %></p>
     <p>Prep Time: <%= @recipe.prep_time %></p>
     <p> <button type="button" data-toggle="modal" data-target="#helpModal">
-          <%= fa_icon "microphone 3x", title: "Click for help"%>
+          <%= fa_icon "question", title: "Click for help"%>
         </button>
     </p>
     <p> Say <b>"Audio Mode"</b> for Voice Navigation. Or <b>"Help"</b> for a list of Voice Commands.</p>
@@ -33,14 +33,18 @@
           <div class="modal-body">
             <h4>Voice Commands</h4>
             <ul>
-              <li>"Next/Right" to move to the next slide.</li>
-              <li>"Back/Left" to move to the previous slide.</li>
-              <li>"Ingredients" to move to the list of Ingredients slide.</li>
-              <li>"Step + Number" to move to specific step, e.g. "Step 1"</li>
-              <li>"Resume" to move back to the last step</li>
+              <li>"Audio Mode" or "Slide Show" to start voice navigation mode.</li>
+              <li>"Next" or "Right" to move to the next slide.</li>
+              <li>"Back" or "Left" to move to the previous slide.</li>
+              <li>"Ingredients" to move to the list of Ingredients.</li>
+              <li>"Step + Number" to move to specific step, e.g. "Step 1".</li>
+              <li>"Resume" to move back to the last step.</li>
               <li>"End" to quit Audio mode.</li>
               <li>"Help" to toggle Audio mode help.</li>
             </ul>
+            <p class="warning">
+              <b>Note: Speech Recognition only works in Google Chrome Desktop Version</b>
+            </p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -114,7 +118,8 @@
   </div>
   <div class="edit-delete">
     <%= link_to "Edit Recipe", edit_recipe_path(@recipe), class: "btn blue-button" %>
-    <%= link_to "Delete Recipe", recipe_path(@recipe), class: "btn red-button", method: :delete %>
+    <%= link_to "Delete Recipe", recipe_path(@recipe), class: "btn red-button",
+                                 data: {confirm: "Are you sure?"}, method: :delete %>
   </div>
 
 </div>

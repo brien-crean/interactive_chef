@@ -142,6 +142,7 @@ h1 {
 
 .new-recipe {
   padding-left: 45px;
+  font-family: 'Bree Serif', serif;
 }
 
 .create-btn {
@@ -153,8 +154,27 @@ h1 {
 
 .external-form {
   margin-bottom: 50px;
+  margin-left: 25px;
+}
+
+.external-url {
+  margin-bottom: 5px;
 }
 
 .step {
   padding-left: 30px;
+}
+
+.warning {
+  font-size: 15px;
+}
+
+.new-edit-form {
+  margin-top: 30px;
+  background-color: #F6F6F6;
+}
+
+.help-text p {
+  font-size: 15px;
+  padding-left: 45px;
 }

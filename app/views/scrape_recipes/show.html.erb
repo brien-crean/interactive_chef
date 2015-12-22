@@ -33,7 +33,6 @@
 
 </div>
 <div class="edit-delete2">
-
-  <%#= link_to "Edit", edit_recipe_path(@recipe), class: "btn blue-button" %>
-  <%#= link_to "Delete", scrape_recipe_path(@recipe_scrape), class: "btn red-button", method: :delete %>
+  <%= link_to "Delete Recipe", scrape_recipe_path(@recipe_scrape), class: "btn red-button",
+                               data: {confirm: "Are you sure?"}, method: :delete %>
 </div>

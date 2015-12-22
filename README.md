@@ -1,7 +1,8 @@
 # Interactive Chef
   - Interactive Chef allows users to view and add recipes with a twist.
   - Navigating through recipe ingredients and steps is made possible using voice commands.
-  - If you have ever followed a recipe online you know that from time to time you have to avoid touching your expensive device with dirty hands!
+  - If you have ever followed a recipe online you've probably tried to scroll through the recipe steps  
+  while trying to avoid touching your expensive device with dirty hands!
 
 # Demo
 
