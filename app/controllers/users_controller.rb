@@ -8,8 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      # set session user to bypass login after signup
-      # session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to root_path
     else
       render :new
