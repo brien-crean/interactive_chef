@@ -7,7 +7,7 @@ class RecipesController < ApplicationController
     @recipe_scrapes = RecipeScrape.order("created_at")
     respond_to do |format|
       format.html { render }
-      format.json { render json: @recipes.select(:id, :title, :description).to_json }
+      format.json { render json: @recipes.select(:id, :title, :description, :image).to_json }
     end
   end
 
@@ -37,9 +37,17 @@ class RecipesController < ApplicationController
   def show
     @comment = Comment.new
 
+    ingredients = [];
+    @recipe.includings.each do |including|
+      ingredients.push("#{including.amount} #{including.measure_type} #{including.ingredient.name}")
+    end
+
+
+    @full_recipe = {recipe: @recipe, steps: @recipe.steps, ingredients: ingredients }
+
     respond_to do |format|
       format.html { render }
-      format.json { render json: @recipe.select(:id, :title, :description).to_json }
+      format.json { render json: @full_recipe.to_json }
     end
 
   end
